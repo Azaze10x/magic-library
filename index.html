@@ -88,6 +88,18 @@
 
   <!-- ============== HERO ============== -->
   <section class="hero">
+    <!-- Slow-drifting aurora glow -->
+    <div class="hero-aurora" aria-hidden="true"></div>
+    <!-- Drifting magic dust + twinkle (canvas; no-JS / reduced-motion safe) -->
+    <canvas class="magic-dust" aria-hidden="true"></canvas>
+    <!-- Slow-floating arcane runes -->
+    <div class="hero-runes" aria-hidden="true">
+      <span class="rune rune-1">✶</span>
+      <span class="rune rune-2">✦</span>
+      <span class="rune rune-3">❋</span>
+      <span class="rune rune-4">✷</span>
+      <span class="rune rune-5">✺</span>
+    </div>
     <div class="hero-content">
       <div class="hero-text">
         <span class="hero-eyebrow" data-i18n="hero.eyebrow">A Grimoire for your desktop</span>
@@ -313,5 +325,6 @@
 
   <script src="i18n.js"></script>
   <script src="download.js"></script>
+  <script src="magic.js"></script>
 </body>
 </html>

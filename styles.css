@@ -264,6 +264,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-image:
     radial-gradient(1px 1px at 12% 22%, rgba(243, 233, 210, 0.7) 50%, transparent 51%),
     radial-gradient(1px 1px at 38% 64%, rgba(184, 154, 240, 0.6) 50%, transparent 51%),
@@ -273,7 +274,90 @@ button {
     radial-gradient(1.5px 1.5px at 24% 88%, rgba(184, 154, 240, 0.45) 50%, transparent 51%);
   background-size: 480px 480px;
   pointer-events: none;
-  opacity: 0.8;
+  animation: starTwinkle 7s ease-in-out infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.45; }
+}
+
+/* cursor-following aura — moves via CSS vars set in magic.js */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 35%),
+    rgba(184, 154, 240, 0.16) 0%,
+    rgba(201, 162, 75, 0.07) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero.has-cursor::after {
+  opacity: 1;
+}
+
+/* drifting aurora blobs behind the content */
+.hero-aurora {
+  position: absolute;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(40% 38% at 28% 30%, rgba(159, 122, 234, 0.4) 0%, transparent 60%),
+    radial-gradient(36% 34% at 75% 65%, rgba(201, 162, 75, 0.28) 0%, transparent 60%),
+    radial-gradient(30% 30% at 60% 18%, rgba(124, 92, 196, 0.3) 0%, transparent 60%);
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: auroraDrift 26s ease-in-out infinite alternate;
+}
+
+@keyframes auroraDrift {
+  0%   { transform: translate3d(-3%, -2%, 0) scale(1);    opacity: 0.45; }
+  50%  { transform: translate3d(4%, 3%, 0) scale(1.12);   opacity: 0.65; }
+  100% { transform: translate3d(2%, -3%, 0) scale(1.05);  opacity: 0.5; }
+}
+
+.magic-dust {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* slow-floating arcane runes */
+.hero-runes {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-runes .rune {
+  position: absolute;
+  font-family: var(--font-display);
+  color: var(--gold-bright);
+  opacity: 0.16;
+  text-shadow: 0 0 18px rgba(201, 162, 75, 0.5);
+  will-change: transform, opacity;
+}
+
+.rune-1 { top: 16%; left: 8%;  font-size: 38px; animation: runeFloat 13s ease-in-out infinite; }
+.rune-2 { top: 68%; left: 14%; font-size: 26px; color: var(--ethereal-soft); animation: runeFloat 17s ease-in-out infinite 1.5s; }
+.rune-3 { top: 24%; left: 62%; font-size: 30px; animation: runeFloat 15s ease-in-out infinite 0.8s; }
+.rune-4 { top: 78%; left: 70%; font-size: 34px; color: var(--ethereal-soft); animation: runeFloat 19s ease-in-out infinite 2.2s; }
+.rune-5 { top: 44%; left: 90%; font-size: 24px; animation: runeFloat 14s ease-in-out infinite 1s; }
+
+@keyframes runeFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+  50%      { transform: translateY(-22px) rotate(12deg); opacity: 0.28; }
 }
 
 .hero-content {
@@ -284,7 +368,7 @@ button {
   gap: 64px;
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -299,6 +383,12 @@ button {
   background: rgba(201, 162, 75, 0.08);
   border: 1px solid rgba(201, 162, 75, 0.35);
   border-radius: 100px;
+  animation: eyebrowGlow 4s ease-in-out infinite;
+}
+
+@keyframes eyebrowGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(201, 162, 75, 0); border-color: rgba(201, 162, 75, 0.35); }
+  50% { box-shadow: 0 0 18px rgba(201, 162, 75, 0.3); border-color: rgba(201, 162, 75, 0.6); }
 }
 
 .hero-title {
@@ -315,10 +405,23 @@ button {
 .hero-title .glyph {
   display: inline-block;
   font-style: italic;
-  background: linear-gradient(110deg, var(--gold-bright) 10%, var(--ethereal-soft) 60%, var(--ethereal) 90%);
+  background: linear-gradient(
+    110deg,
+    var(--gold-bright) 0%,
+    var(--ethereal-soft) 25%,
+    #FFF6DD 45%,
+    var(--ethereal) 65%,
+    var(--gold-bright) 100%
+  );
+  background-size: 250% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: glyphShimmer 6s linear infinite;
+}
+
+@keyframes glyphShimmer {
+  to { background-position: 250% center; }
 }
 
 .hero-tagline {
@@ -554,6 +657,12 @@ section {
   color: var(--gold);
   font-size: 12px;
   background: var(--parchment);
+  animation: sigilGlow 4.5s ease-in-out infinite;
+}
+
+@keyframes sigilGlow {
+  0%, 100% { text-shadow: 0 0 0 rgba(201, 162, 75, 0); }
+  50% { text-shadow: 0 0 12px rgba(201, 162, 75, 0.8); }
 }
 
 /* ============== AGENTS (parchment chapter) ============== */
@@ -609,11 +718,18 @@ section {
 
 .agent-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(26, 20, 15, 0.18);
+  border-color: color-mix(in srgb, var(--agent-color) 45%, transparent);
+  box-shadow:
+    0 12px 40px rgba(26, 20, 15, 0.18),
+    0 0 30px color-mix(in srgb, var(--agent-color) 28%, transparent);
 }
 
 .agent-card:hover::after {
-  opacity: 0.18;
+  opacity: 0.28;
+}
+
+.agent-card:hover .agent-glyph {
+  box-shadow: 0 0 22px color-mix(in srgb, var(--agent-color) 45%, transparent);
 }
 
 .agent-card.lore { --agent-color: var(--agent-lore); }
@@ -631,6 +747,7 @@ section {
   color: var(--agent-color);
   background: color-mix(in srgb, var(--agent-color) 12%, transparent);
   border: 1px solid color-mix(in srgb, var(--agent-color) 30%, transparent);
+  transition: box-shadow 0.4s ease;
 }
 
 .agent-role {
