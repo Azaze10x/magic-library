@@ -8,6 +8,10 @@
  * For now, the button is shown with a "Coming Soon" badge and the click is a no-op.
  */
 
+/* Master switch — keep false until launch. While false the download buttons
+   stay "Coming soon" even if a DMG release exists on GitHub. */
+const DOWNLOAD_ENABLED = false;
+
 const RELEASE_API = "https://api.github.com/repos/Azaze10x/magic-library/releases/latest";
 const DMG_PATTERN = /\.dmg$/i;
 
@@ -71,6 +75,10 @@ function formatBytes(bytes) {
 }
 
 (async function init() {
+  if (!DOWNLOAD_ENABLED) {
+    console.log("[download] Disabled by DOWNLOAD_ENABLED flag — buttons stay Coming soon");
+    return;
+  }
   /* Try to fetch — if no release yet, button stays disabled with "Coming soon" badge */
   const release = await fetchLatestRelease();
   if (release) {
