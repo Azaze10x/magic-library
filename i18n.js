@@ -75,7 +75,10 @@ function applyMeta(dict) {
 }
 
 async function loadLocale(locale) {
-  const res = await fetch(`locales/${locale}.json`);
+  // Resolve locales/ relative to the page that included i18n.js so sub-pages
+  // (pages/privacy.html) also work.
+  const base = document.currentScript ? new URL(".", document.currentScript.src) : new URL(".", location.href);
+  const res = await fetch(new URL(`locales/${locale}.json`, base).toString());
   if (!res.ok) throw new Error(`Failed to load locale: ${locale}`);
   return res.json();
 }

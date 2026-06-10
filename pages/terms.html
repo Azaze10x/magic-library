@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0C1426" />
+  <title>Terms — Magic Library</title>
+  <meta name="description" content="The rules of using Magic Library, the limits of our responsibility, and the licensing of your work." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Maitree:wght@400;500;600;700&family=Sarabun:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .legal-page { max-width: 760px; margin: 0 auto; padding: 140px 24px 80px; }
+    .legal-page h1 { font-family: var(--font-display); font-size: clamp(36px, 5vw, 52px); margin-bottom: 12px; }
+    .legal-page .meta { font-family: var(--font-mono); font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 40px; }
+    .legal-page h2 { font-family: var(--font-display); font-size: 26px; margin: 36px 0 12px; color: var(--ink); }
+    .legal-page p, .legal-page li { font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--ink-soft); }
+    .legal-page ul { padding-left: 22px; margin: 12px 0; }
+    .legal-page li { margin-bottom: 6px; }
+    .legal-page a { color: var(--agent-writer); }
+    .legal-page .back { display: inline-block; margin-bottom: 24px; font-family: var(--font-mono); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; }
+    .legal-page .back:hover { color: var(--ethereal); }
+    body.legal { background: var(--parchment); }
+  </style>
+</head>
+<body class="legal">
+  <main class="legal-page">
+    <a class="back" href="../index.html">← Back to Magic Library</a>
+    <h1 data-i18n="terms.title">Terms of Use</h1>
+    <p class="meta" data-i18n="terms.meta">Last updated · 2026-06-10</p>
+
+    <p data-i18n="terms.intro">
+      By installing or using Magic Library you agree to these terms. If you don't, please don't
+      use the software. They're written to be readable, not to trap you.
+    </p>
+
+    <h2 data-i18n="terms.license.title">Your work stays yours</h2>
+    <p data-i18n="terms.license.body">Everything you write in Magic Library is yours. We claim no rights to it. You can export, share, sell, or burn it at your discretion. The AI services you connect to may have their own terms about the data you send them — those apply between you and them, not us.</p>
+
+    <h2 data-i18n="terms.app.title">The software itself</h2>
+    <p data-i18n="terms.app.body">Magic Library is provided "as is", without warranty of any kind. We do our best to make it reliable, but we cannot guarantee it will always work, that AI output will be accurate, or that it will be free of bugs. To the maximum extent permitted by law, Shaman Technology is not liable for any indirect, incidental, or consequential damages arising from your use of Magic Library.</p>
+
+    <h2 data-i18n="terms.ai.title">AI-generated content</h2>
+    <p data-i18n="terms.ai.body">Magic Library orchestrates third-party AI services. The model output may be inaccurate, offensive, or unsuitable for your purpose. You are responsible for reviewing anything before you publish, sell, or rely on it. We do not pre-screen, edit, or endorse model output.</p>
+
+    <h2 data-i18n="terms.credits.title">Nexus Credits (when available)</h2>
+    <p data-i18n="terms.credits.body">Nexus credits are sold separately and are non-refundable once consumed by an agent run. Unspent credits follow the Nexus refund policy. We do not see the contents of your runs.</p>
+
+    <h2 data-i18n="terms.misuse.title">Don't abuse the service</h2>
+    <ul>
+      <li data-i18n="terms.misuse.reverse">No reverse engineering the proprietary model router or the Nexus API integration to build a competing product.</li>
+      <li data-i18n="terms.misuse.circumvent">No circumventing rate limits, purchase limits, or the credit balance.</li>
+      <li data-i18n="terms.misuse.launder">No using Magic Library to launder output as if it were your own when representing someone else's work.</li>
+    </ul>
+
+    <h2 data-i18n="terms.changes.title">Changes</h2>
+    <p data-i18n="terms.changes.body">If we materially change these terms, we will bump the date at the top, note it in the release notes, and give you at least 30 days' notice before the new terms take effect for existing installs.</p>
+
+    <h2 data-i18n="terms.law.title">Governing law</h2>
+    <p data-i18n="terms.law.body">These terms are governed by the laws of Thailand, without regard to its conflict-of-laws rules. Disputes will be resolved in the courts of Bangkok, Thailand.</p>
+
+    <h2 data-i18n="terms.contact.title">Contact</h2>
+    <p data-i18n-html="terms.contact.body">Questions: <a href="mailto:info@shamantech.co">info@shamantech.co</a>. We respond within 5 business days.</p>
+  </main>
+  <script>
+    document.documentElement.classList.add("js");
+    const script = document.createElement("script");
+    script.src = "../i18n.js";
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

@@ -132,9 +132,17 @@
   },
   "footer": {
     "tagline": "于魔法图书馆中手工打造",
-    "github": "GitHub",
-    "license": "许可",
     "contact": "联系",
-    "copyright": "© 2026 Shaman Technology · 为写作者而作 ✦"
+    "copyright": "© 2026 Shaman Technology · 为写作者而作 ✦",
+    "privacy": "隐私",
+    "terms": "条款"
+  },
+  "privacy": {
+    "title": "隐私声明",
+    "meta": "Last updated · 2026-06-10"
+  },
+  "terms": {
+    "title": "使用条款",
+    "meta": "Last updated · 2026-06-10"
   }
 }

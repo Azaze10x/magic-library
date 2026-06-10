@@ -132,9 +132,17 @@
   },
   "footer": {
     "tagline": "Làm thủ công tại thư viện phép thuật",
-    "github": "GitHub",
-    "license": "Giấy phép",
     "contact": "Liên hệ",
-    "copyright": "© 2026 Shaman Technology · Làm với ✦ cho người viết"
+    "copyright": "© 2026 Shaman Technology · Làm với ✦ cho người viết",
+    "privacy": "Bảo mật",
+    "terms": "Điều khoản"
+  },
+  "privacy": {
+    "title": "Thông báo Bảo mật",
+    "meta": "Last updated · 2026-06-10"
+  },
+  "terms": {
+    "title": "Điều khoản Sử dụng",
+    "meta": "Last updated · 2026-06-10"
   }
 }

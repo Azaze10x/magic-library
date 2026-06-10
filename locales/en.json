@@ -132,9 +132,17 @@
   },
   "footer": {
     "tagline": "Handcrafted in a magic library",
-    "github": "GitHub",
-    "license": "License",
     "contact": "Contact",
-    "copyright": "© 2026 Shaman Technology · Made with ✦ for writers"
+    "copyright": "© 2026 Shaman Technology · Made with ✦ for writers",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "meta": "Last updated · 2026-06-10"
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "meta": "Last updated · 2026-06-10"
   }
 }

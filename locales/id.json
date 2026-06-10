@@ -132,9 +132,17 @@
   },
   "footer": {
     "tagline": "Dibuat dengan tangan di perpustakaan magis",
-    "github": "GitHub",
-    "license": "Lisensi",
     "contact": "Kontak",
-    "copyright": "© 2026 Shaman Technology · Dibuat dengan ✦ untuk para penulis"
+    "copyright": "© 2026 Shaman Technology · Dibuat dengan ✦ untuk para penulis",
+    "privacy": "Privasi",
+    "terms": "Ketentuan"
+  },
+  "privacy": {
+    "title": "Pemberitahuan Privasi",
+    "meta": "Last updated · 2026-06-10"
+  },
+  "terms": {
+    "title": "Ketentuan Penggunaan",
+    "meta": "Last updated · 2026-06-10"
   }
 }

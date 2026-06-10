@@ -132,9 +132,17 @@
   },
   "footer": {
     "tagline": "魔法の図書館で手作り",
-    "github": "GitHub",
-    "license": "ライセンス",
     "contact": "お問い合わせ",
-    "copyright": "© 2026 Shaman Technology · 書き手のために ✦"
+    "copyright": "© 2026 Shaman Technology · 書き手のために ✦",
+    "privacy": "プライバシー",
+    "terms": "利用規約"
+  },
+  "privacy": {
+    "title": "プライバシー通知",
+    "meta": "Last updated · 2026-06-10"
+  },
+  "terms": {
+    "title": "利用規約",
+    "meta": "Last updated · 2026-06-10"
   }
 }
