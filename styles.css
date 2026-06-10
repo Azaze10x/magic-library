@@ -21,9 +21,10 @@
   --crimson: #8B2E2A;
   --moonlight: #EDE6F7;
 
-  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
-  --font-body: "EB Garamond", Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Cormorant Garamond", "Maitree", "Playfair Display", Georgia, serif;
+  --font-body: "EB Garamond", "Maitree", Georgia, "Times New Roman", serif;
+  --font-ui: "Cormorant Garamond", "Sarabun", var(--font-sans-base, system-ui, -apple-system, sans-serif);
+  --font-mono: "JetBrains Mono", "Sarabun", ui-monospace, monospace;
 
   --radius: 10px;
   --shadow-soft: 0 4px 16px rgba(26, 20, 15, 0.08);
@@ -101,36 +102,35 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  border-radius: 12px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(227, 200, 128, 0.32) 0%, rgba(159, 122, 234, 0.2) 55%, transparent 75%);
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #FAF6EA;
+  /* Gold/violet glow radiates around the white frame on the dark top bar */
   box-shadow:
-    0 0 0 1px rgba(227, 200, 128, 0.25),
-    0 0 14px rgba(159, 122, 234, 0.4);
+    0 0 0 1px rgba(227, 200, 128, 0.45),
+    0 0 12px rgba(227, 200, 128, 0.45),
+    0 0 22px rgba(159, 122, 234, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-brand-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: #FAF6EA;
-  padding: 1px;
-  filter: drop-shadow(0 0 5px rgba(227, 200, 128, 0.55));
-  transition: transform 0.3s ease, filter 0.3s ease;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
 }
 
 .nav-brand:hover .nav-brand-frame {
   transform: rotate(-2deg);
   box-shadow:
-    0 0 0 1px rgba(227, 200, 128, 0.5),
-    0 0 22px rgba(227, 200, 128, 0.4);
+    0 0 0 1px rgba(227, 200, 128, 0.6),
+    0 0 18px rgba(227, 200, 128, 0.6),
+    0 0 30px rgba(159, 122, 234, 0.5);
 }
 
 .nav-brand:hover .nav-brand-icon {
   transform: scale(1.05);
-  filter: drop-shadow(0 0 8px rgba(227, 200, 128, 0.8));
 }
 
 .nav-brand-text {

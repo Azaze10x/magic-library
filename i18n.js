@@ -12,11 +12,13 @@ const LOCALE_LABELS = {
 const DEFAULT_LOCALE = "en";
 const STORAGE_KEY = "magic-library-locale";
 
-/* CJK/Thai fonts are loaded on demand when the user selects those locales */
+/* CJK/Thai fonts are loaded on demand when the user selects those locales.
+   Pairs with the app's design system: Maitree (body serif) + Sarabun (UI sans)
+   for Thai, matching src/app/layout.tsx. */
 const LOCALE_FONTS = {
   zh: "family=Noto+Sans+SC:wght@400;500;600",
   ja: "family=Noto+Sans+JP:wght@400;500;600",
-  th: "family=Noto+Sans+Thai:wght@400;500;600",
+  th: "family=Maitree:wght@400;500;600;700&family=Sarabun:wght@400;500;600&display=swap",
 };
 const loadedLocaleFonts = new Set();
 
