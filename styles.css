@@ -97,23 +97,40 @@ button {
   color: var(--parchment-light);
 }
 
+.nav-brand-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(227, 200, 128, 0.32) 0%, rgba(159, 122, 234, 0.2) 55%, transparent 75%);
+  box-shadow:
+    0 0 0 1px rgba(227, 200, 128, 0.25),
+    0 0 14px rgba(159, 122, 234, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .nav-brand-icon {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(227, 200, 128, 0.28) 0%, rgba(159, 122, 234, 0.18) 55%, transparent 75%);
-  filter: brightness(1.1)
-    drop-shadow(0 0 6px rgba(227, 200, 128, 0.7))
-    drop-shadow(0 0 14px rgba(159, 122, 234, 0.55));
+  border-radius: 8px;
+  background: #FAF6EA;
+  padding: 1px;
+  filter: drop-shadow(0 0 5px rgba(227, 200, 128, 0.55));
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.nav-brand:hover .nav-brand-frame {
+  transform: rotate(-2deg);
+  box-shadow:
+    0 0 0 1px rgba(227, 200, 128, 0.5),
+    0 0 22px rgba(227, 200, 128, 0.4);
+}
+
 .nav-brand:hover .nav-brand-icon {
-  transform: scale(1.06) rotate(-2deg);
-  filter: brightness(1.18)
-    drop-shadow(0 0 10px rgba(227, 200, 128, 0.95))
-    drop-shadow(0 0 22px rgba(159, 122, 234, 0.75));
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(227, 200, 128, 0.8));
 }
 
 .nav-brand-text {
