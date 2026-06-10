@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Magic Library — 桌面上的魔法书库",
+    "description": "三个 AI 智能体协作为你创作小说——构建世界、起草和润色，让你边品茶边完成。"
+  },
+  "nav": {
+    "features": "功能",
+    "agents": "助手",
+    "screenshots": "预览",
+    "pipeline": "流水线",
+    "download": "下载"
+  },
+  "hero": {
+    "eyebrow": "属于你桌面的魔法书",
+    "title": "Magic <span class=\"glyph\">Library</span>",
+    "tagline": "三位 AI 助手协作撰写你的小说 — 构建世界、起草章节、校对润色,一切在你品茶时悄然完成。",
+    "download": "免费下载",
+    "learnMore": "了解工作原理",
+    "comingSoon": "敬请期待",
+    "caption": "✦ 魔法书 · 传承 · 作者 · 编辑"
+  },
+  "agents": {
+    "eyebrow": "三位 AI 助手",
+    "title": "守护者、抄写员与编辑",
+    "subtitle": "每一位都是专家,合而为一则是工坊。",
+    "lore": {
+      "role": "传承担当",
+      "name": "守护者",
+      "desc": "记住你世界的每一个细节、角色与规则 — 在每章之间保持一致。"
+    },
+    "writer": {
+      "role": "抄写员",
+      "name": "作者",
+      "desc": "按你的故事计划逐章撰写 — 采用你选定的风格与方向。"
+    },
+    "critic": {
+      "role": "编辑担当",
+      "name": "编辑",
+      "desc": "以锐利的眼光审视每章 — 评分并指出需要打磨之处。"
+    }
+  },
+  "tools": {
+    "eyebrow": "工坊工具",
+    "title": "所需尽有,一路相伴",
+    "subtitle": "从大纲到成稿,一站俱全。",
+    "plan": {
+      "name": "故事计划",
+      "desc": "勾勒叙事,拆分为幕与节拍,管理状态与顺序。"
+    },
+    "world": {
+      "name": "世界知识库",
+      "desc": "构建角色、地点、阵营、神器的实体条目,以及它们之间的关系。"
+    },
+    "dock": {
+      "name": "神秘坞站",
+      "desc": "在每一页都能与助手侧边聊天 — 从不脱离上下文。"
+    },
+    "ingest": {
+      "name": "导入",
+      "desc": "导入 .docx / .pdf — 让 AI 自动抽取角色与世界设定。"
+    },
+    "export": {
+      "name": "导出",
+      "desc": "导出为 Markdown、PDF 或电子书 — 按章节或整书输出。"
+    },
+    "chat": {
+      "name": "对话",
+      "desc": "与作者实时交流 — 请求续写、扩展或总结。"
+    },
+    "schedules": {
+      "name": "计划任务",
+      "desc": "为自主写作设置定时 — 每小时、每天或每周。"
+    },
+    "rubric": {
+      "name": "校阅量规",
+      "desc": "五个维度评分 — 世界、角色之声、情节、文笔、连贯性。"
+    }
+  },
+  "pipeline": {
+    "eyebrow": "自主流水线",
+    "title": "一键,即得新章",
+    "subtitle": "传承担当准备 → 作者撰写 → 编辑校阅 → 通过则保存章节。",
+    "stages": {
+      "prep": {
+        "num": "01",
+        "glyph": "🧙",
+        "name": "传承准备",
+        "desc": "回顾上一章,生成写作指南,总结迄今的故事。"
+      },
+      "write": {
+        "num": "02",
+        "glyph": "✍️",
+        "name": "作者撰写",
+        "desc": "按计划起草新章,使用工具搜索世界与前文。"
+      },
+      "review": {
+        "num": "03",
+        "glyph": "📖",
+        "name": "编辑校阅",
+        "desc": "在五维度上 0–10 评分,需达到 7+ 方可通过。"
+      }
+    },
+    "features": {
+      "cron": {
+        "title": "定时运行",
+        "desc": "基于 Cron 的调度器 — 每小时、每天或每周自动写作。"
+      },
+      "loop": {
+        "title": "循环直至通过",
+        "desc": "若编辑驳回,作者按反馈重写,最多三次。"
+      },
+      "budget": {
+        "title": "限时执行",
+        "desc": "硬性 35 分钟上限 — 任何运行都不会让机器彻夜不眠。"
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "应用内观",
+    "title": "看它如何运作",
+    "subtitle": "每一页都与其它页面协同 — 打开一处,全貌在握。",
+    "plan": "计划 — 故事弧与节拍",
+    "review": "校阅 — 编辑量规",
+    "chat": "对话 — 与作者交谈"
+  },
+  "cta": {
+    "title": "准备好写你的第一本小说了吗?",
+    "desc": "免费下载,自带 API 密钥即可使用 — 或等待 Nexus 上线后在应用内购买额度。",
+    "download": "下载桌面版",
+    "comingSoon": "DMG 即将发布",
+    "requirements": "macOS 12+ · Windows 即将推出 · 200 MB"
+  },
+  "footer": {
+    "tagline": "于魔法图书馆中手工打造",
+    "github": "GitHub",
+    "license": "许可",
+    "contact": "联系",
+    "copyright": "© 2026 Shaman Technology · 为写作者而作 ✦"
+  }
+}

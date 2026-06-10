@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Magic Library — A Grimoire for your desktop",
+    "description": "Three AI agents collaborate to write your novel — world-building, drafting, and editing while you sip your tea."
+  },
+  "nav": {
+    "features": "Features",
+    "agents": "Agents",
+    "screenshots": "Screenshots",
+    "pipeline": "Pipeline",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "A Grimoire for your desktop",
+    "title": "Magic <span class=\"glyph\">Library</span>",
+    "tagline": "Three AI agents collaborating to write your novel — world-building, drafting, and editing while you sip your tea.",
+    "download": "Download free",
+    "learnMore": "How it works",
+    "comingSoon": "Coming soon",
+    "caption": "✦ Grimoire · LORE · WRITER · CRITIC"
+  },
+  "agents": {
+    "eyebrow": "Three AI agents",
+    "title": "The Keeper, the Scribe, and the Editor",
+    "subtitle": "Each is a specialist. Together, they are a workshop.",
+    "lore": {
+      "role": "Lore Keeper",
+      "name": "The Keeper",
+      "desc": "Remembers every detail of your world, characters, and rules — keeping continuity across chapters."
+    },
+    "writer": {
+      "role": "Scribe",
+      "name": "The Scribe",
+      "desc": "Drafts chapter by chapter from your story plan — in the style and direction you choose."
+    },
+    "critic": {
+      "role": "Editor",
+      "name": "The Editor",
+      "desc": "Reviews each chapter with a piercing eye — scores it and points out what to refine."
+    }
+  },
+  "tools": {
+    "eyebrow": "Workshop tools",
+    "title": "Everything you need, every step of the way",
+    "subtitle": "From outline to delivery, all in one place.",
+    "plan": {
+      "name": "Story Plan",
+      "desc": "Outline the narrative, break it into acts and beats, with status and ordering."
+    },
+    "world": {
+      "name": "World KB",
+      "desc": "Build entities for characters, places, factions, and artifacts — with relationships between them."
+    },
+    "dock": {
+      "name": "Arcane Dock",
+      "desc": "Chat with any agent via a slide-in dock on every page — never lose context."
+    },
+    "ingest": {
+      "name": "Ingest",
+      "desc": "Import .docx / .pdf — let AI extract characters and lore into your world automatically."
+    },
+    "export": {
+      "name": "Export",
+      "desc": "Export to Markdown, PDF, or eBook — per chapter or compiled as a tome."
+    },
+    "chat": {
+      "name": "Chat",
+      "desc": "Talk to WRITER in real time — ask to continue, expand, or summarize."
+    },
+    "schedules": {
+      "name": "Schedules",
+      "desc": "Set a cron schedule for autonomous writing — hourly, daily, or weekly."
+    },
+    "rubric": {
+      "name": "Critic Rubric",
+      "desc": "A 5-dimension rubric — lore, character voice, plot, prose, continuity."
+    }
+  },
+  "pipeline": {
+    "eyebrow": "Autonomous pipeline",
+    "title": "One click. A new chapter.",
+    "subtitle": "LORE preps → WRITER drafts → CRITIC scores → if it passes, the chapter is saved.",
+    "stages": {
+      "prep": {
+        "num": "01",
+        "glyph": "🧙",
+        "name": "LORE prep",
+        "desc": "Reviews the last chapter, builds writer guidelines, summarizes the story so far."
+      },
+      "write": {
+        "num": "02",
+        "glyph": "✍️",
+        "name": "WRITER drafts",
+        "desc": "Drafts a new chapter from the plan, using tools to search the world and previous chapters."
+      },
+      "review": {
+        "num": "03",
+        "glyph": "📖",
+        "name": "CRITIC reviews",
+        "desc": "Scores 0–10 across 5 dimensions. Must hit 7+ to pass."
+      }
+    },
+    "features": {
+      "cron": {
+        "title": "Scheduled runs",
+        "desc": "Cron-based scheduler — write every hour, every day, or every week."
+      },
+      "loop": {
+        "title": "Loop until it passes",
+        "desc": "If CRITIC rejects, WRITER rewrites based on the feedback, up to 3 times."
+      },
+      "budget": {
+        "title": "Time-bounded",
+        "desc": "Hard 35-minute ceiling — no run ever pins your machine overnight."
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Inside the app",
+    "title": "See it in action",
+    "subtitle": "Every page is designed to work with the others — open one and see the whole picture.",
+    "plan": "Plan — story arcs and beats",
+    "review": "Review — editor rubric",
+    "chat": "Chat — talk to WRITER"
+  },
+  "cta": {
+    "title": "Ready to write your first novel?",
+    "desc": "Free download. Bring your own API key — or wait for Nexus integration to buy credits in-app.",
+    "download": "Download for desktop",
+    "comingSoon": "DMG coming soon",
+    "requirements": "macOS 12+ · Windows coming soon · 200 MB"
+  },
+  "footer": {
+    "tagline": "Handcrafted in a magic library",
+    "github": "GitHub",
+    "license": "License",
+    "contact": "Contact",
+    "copyright": "© 2026 Shaman Technology · Made with ✦ for writers"
+  }
+}

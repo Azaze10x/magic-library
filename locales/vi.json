@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Magic Library — Cuốn Grimoire cho máy tính của bạn",
+    "description": "Ba tác nhân AI cùng nhau viết tiểu thuyết của bạn — xây dựng thế giới, soạn thảo và biên tập trong khi bạn nhâm nhi tách trà."
+  },
+  "nav": {
+    "features": "Tính năng",
+    "agents": "Trợ lý",
+    "screenshots": "Hình ảnh",
+    "pipeline": "Pipeline",
+    "download": "Tải về"
+  },
+  "hero": {
+    "eyebrow": "Một cuốn Ma Điển cho máy tính của bạn",
+    "title": "Magic <span class=\"glyph\">Library</span>",
+    "tagline": "Ba trợ lý AI cùng nhau viết tiểu thuyết của bạn — xây dựng thế giới, soạn chương, và biên tập, trong khi bạn nhâm nhi tách trà.",
+    "download": "Tải về miễn phí",
+    "learnMore": "Tìm hiểu cách hoạt động",
+    "comingSoon": "Sắp ra mắt",
+    "caption": "✦ Ma Điển · TRUYỀN THUYẾT · TÁC GIẢ · BIÊN TẬP"
+  },
+  "agents": {
+    "eyebrow": "Ba trợ lý AI",
+    "title": "Người giữ, Người viết, và Người biên tập",
+    "subtitle": "Mỗi người là một chuyên gia. Cùng nhau, họ là một xưởng.",
+    "lore": {
+      "role": "Người giữ truyền thuyết",
+      "name": "Người giữ",
+      "desc": "Ghi nhớ mọi chi tiết về thế giới, nhân vật, và quy tắc — duy trì tính liên tục xuyên suốt các chương."
+    },
+    "writer": {
+      "role": "Tác giả",
+      "name": "Tác giả",
+      "desc": "Viết từng chương theo kế hoạch truyện của bạn — với phong cách và hướng đi bạn chọn."
+    },
+    "critic": {
+      "role": "Biên tập viên",
+      "name": "Biên tập viên",
+      "desc": "Xem xét từng chương bằng đôi mắt sắc bén — chấm điểm và chỉ ra điều cần tinh chỉnh."
+    }
+  },
+  "tools": {
+    "eyebrow": "Công cụ xưởng",
+    "title": "Mọi thứ bạn cần, trên từng bước",
+    "subtitle": "Từ đại cương đến hoàn thiện, tất cả ở một nơi.",
+    "plan": {
+      "name": "Kế hoạch truyện",
+      "desc": "Phác thảo cốt truyện, chia thành hồi và beat, kèm trạng thái và thứ tự."
+    },
+    "world": {
+      "name": "Kho thế giới",
+      "desc": "Tạo thực thể cho nhân vật, địa điểm, phe phái, và cổ vật — cùng các mối quan hệ giữa chúng."
+    },
+    "dock": {
+      "name": "Bến tàu bí ẩn",
+      "desc": "Trò chuyện với bất kỳ trợ lý nào qua bến tàu trượt vào trên mọi trang — không bao giờ mất bối cảnh."
+    },
+    "ingest": {
+      "name": "Nhập",
+      "desc": "Nhập .docx / .pdf — để AI tự động trích xuất nhân vật và truyền thuyết."
+    },
+    "export": {
+      "name": "Xuất",
+      "desc": "Xuất sang Markdown, PDF, hoặc sách điện tử — theo chương hoặc gộp thành một tập."
+    },
+    "chat": {
+      "name": "Trò chuyện",
+      "desc": "Nói chuyện với Tác giả theo thời gian thực — yêu cầu tiếp tục, mở rộng, hoặc tóm tắt."
+    },
+    "schedules": {
+      "name": "Lịch trình",
+      "desc": "Đặt lịch cron để viết tự động — mỗi giờ, mỗi ngày, hoặc mỗi tuần."
+    },
+    "rubric": {
+      "name": "Thước đo biên tập",
+      "desc": "Thước đo 5 chiều — truyền thuyết, giọng nhân vật, cốt truyện, văn phong, tính liên tục."
+    }
+  },
+  "pipeline": {
+    "eyebrow": "Quy trình tự động",
+    "title": "Một cú nhấp. Một chương mới.",
+    "subtitle": "Truyền thuyết chuẩn bị → Tác giả viết → Biên tập chấm → nếu đạt, chương được lưu.",
+    "stages": {
+      "prep": {
+        "num": "01",
+        "glyph": "🧙",
+        "name": "Truyền thuyết chuẩn bị",
+        "desc": "Ôn lại chương trước, soạn hướng dẫn cho tác giả, tóm tắt câu chuyện đến hiện tại."
+      },
+      "write": {
+        "num": "02",
+        "glyph": "✍️",
+        "name": "Tác giả viết",
+        "desc": "Soạn chương mới theo kế hoạch, dùng công cụ để tìm trong thế giới và các chương trước."
+      },
+      "review": {
+        "num": "03",
+        "glyph": "📖",
+        "name": "Biên tập đánh giá",
+        "desc": "Chấm 0–10 trên 5 chiều. Phải đạt 7+ mới qua."
+      }
+    },
+    "features": {
+      "cron": {
+        "title": "Chạy theo lịch",
+        "desc": "Bộ lập lịch dựa trên cron — viết mỗi giờ, mỗi ngày, hoặc mỗi tuần."
+      },
+      "loop": {
+        "title": "Lặp đến khi đạt",
+        "desc": "Nếu Biên tập bác, Tác giả viết lại theo góp ý, tối đa 3 lần."
+      },
+      "budget": {
+        "title": "Giới hạn thời gian",
+        "desc": "Trần cứng 35 phút — không có lần chạy nào giữ máy thức cả đêm."
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Bên trong ứng dụng",
+    "title": "Xem nó hoạt động",
+    "subtitle": "Mỗi trang được thiết kế để làm việc cùng nhau — mở một trang, thấy cả bức tranh.",
+    "plan": "Plan — vòng cung và beat",
+    "review": "Review — thước đo biên tập",
+    "chat": "Chat — nói chuyện với Tác giả"
+  },
+  "cta": {
+    "title": "Sẵn sàng viết cuốn tiểu thuyết đầu tiên?",
+    "desc": "Tải về miễn phí. Mang theo khóa API của bạn — hoặc chờ tích hợp Nexus để mua credit trong ứng dụng.",
+    "download": "Tải về cho máy tính",
+    "comingSoon": "DMG sắp ra mắt",
+    "requirements": "macOS 12+ · Windows sắp ra mắt · 200 MB"
+  },
+  "footer": {
+    "tagline": "Làm thủ công tại thư viện phép thuật",
+    "github": "GitHub",
+    "license": "Giấy phép",
+    "contact": "Liên hệ",
+    "copyright": "© 2026 Shaman Technology · Làm với ✦ cho người viết"
+  }
+}

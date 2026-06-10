@@ -1,0 +1,140 @@
+{
+  "meta": {
+    "title": "Magic Library — Grimoire untuk desktop Anda",
+    "description": "Tiga agen AI berkolaborasi menulis novel Anda — membangun dunia, menyusun draf, dan menyunting sambil Anda menyeruput teh."
+  },
+  "nav": {
+    "features": "Fitur",
+    "agents": "Agen",
+    "screenshots": "Tangkapan",
+    "pipeline": "Pipeline",
+    "download": "Unduh"
+  },
+  "hero": {
+    "eyebrow": "Sebuah Grimoire untuk desktop Anda",
+    "title": "Magic <span class=\"glyph\">Library</span>",
+    "tagline": "Tiga agen AI berkolaborasi menulis novel Anda — membangun dunia, menyusun bab, dan menyunting, selagi Anda menyeruput teh.",
+    "download": "Unduh gratis",
+    "learnMore": "Pelajari caranya",
+    "comingSoon": "Segera hadir",
+    "caption": "✦ Grimoire · LORE · WRITER · CRITIC"
+  },
+  "agents": {
+    "eyebrow": "Tiga agen AI",
+    "title": "Sang Penjaga, Penulis, dan Penyunting",
+    "subtitle": "Masing-masing adalah ahli. Bersama, mereka adalah sanggar.",
+    "lore": {
+      "role": "Penjaga Lore",
+      "name": "Sang Penjaga",
+      "desc": "Mengingat setiap detail dunia, karakter, dan aturan Anda — menjaga konsistensi antar bab."
+    },
+    "writer": {
+      "role": "Penulis",
+      "name": "Penulis",
+      "desc": "Menyusun bab demi bab dari rencana cerita Anda — dengan gaya dan arah yang Anda pilih."
+    },
+    "critic": {
+      "role": "Penyunting",
+      "name": "Penyunting",
+      "desc": "Menelaah setiap bab dengan mata tajam — memberi skor dan menunjuk yang perlu diperbaiki."
+    }
+  },
+  "tools": {
+    "eyebrow": "Peralatan sanggar",
+    "title": "Segala yang Anda butuhkan, setiap langkah",
+    "subtitle": "Dari garis besar hingga jadi buku, di satu tempat.",
+    "plan": {
+      "name": "Story Plan",
+      "desc": "Buat garis besar narasi, pecah menjadi akt dan beat, dengan status dan urutan."
+    },
+    "world": {
+      "name": "World KB",
+      "desc": "Bangun entitas karakter, tempat, faksi, dan artefak — lengkap dengan relasi di antaranya."
+    },
+    "dock": {
+      "name": "Arcane Dock",
+      "desc": "Mengobrol dengan agen mana pun lewat dock di setiap halaman — tak pernah kehilangan konteks."
+    },
+    "ingest": {
+      "name": "Impor",
+      "desc": "Impor .docx / .pdf — biarkan AI mengekstrak karakter dan lore secara otomatis."
+    },
+    "export": {
+      "name": "Ekspor",
+      "desc": "Ekspor ke Markdown, PDF, atau eBook — per bab atau dikompilasi sebagai satu jilid."
+    },
+    "chat": {
+      "name": "Obrolan",
+      "desc": "Bicara dengan Penulis secara langsung — minta lanjutkan, perluas, atau rangkum."
+    },
+    "schedules": {
+      "name": "Jadwal",
+      "desc": "Atur cron untuk menulis otomatis — tiap jam, tiap hari, atau tiap minggu."
+    },
+    "rubric": {
+      "name": "Rubrik Penyunting",
+      "desc": "Rubrik 5-dimensi — lore, suara karakter, alur, prosa, kontinuitas."
+    }
+  },
+  "pipeline": {
+    "eyebrow": "Saluran otomatis",
+    "title": "Satu klik. Satu bab baru.",
+    "subtitle": "LORE bersiap → WRITER menulis → CRITIC menilai → jika lulus, bab tersimpan.",
+    "stages": {
+      "prep": {
+        "num": "01",
+        "glyph": "🧙",
+        "name": "LORE bersiap",
+        "desc": "Meninjau bab terakhir, membangun pedoman penulis, merangkum cerita sejauh ini."
+      },
+      "write": {
+        "num": "02",
+        "glyph": "✍️",
+        "name": "WRITER menulis",
+        "desc": "Menyusun bab baru dari rencana, memakai alat untuk menjelajah dunia dan bab-bab sebelumnya."
+      },
+      "review": {
+        "num": "03",
+        "glyph": "📖",
+        "name": "CRITIC menilai",
+        "desc": "Skor 0–10 di lima dimensi. Harus mencapai 7+ untuk lulus."
+      }
+    },
+    "features": {
+      "cron": {
+        "title": "Eksekusi terjadwal",
+        "desc": "Penjadwal berbasis cron — tulis tiap jam, tiap hari, atau tiap minggu."
+      },
+      "loop": {
+        "title": "Mengulang sampai lulus",
+        "desc": "Jika CRITIC menolak, WRITER menulis ulang berdasarkan masukan, hingga 3 kali."
+      },
+      "budget": {
+        "title": "Batas waktu",
+        "desc": "Batas keras 35 menit — tak ada eksekusi yang membuat mesin terjaga semalaman."
+      }
+    }
+  },
+  "gallery": {
+    "eyebrow": "Di dalam aplikasi",
+    "title": "Lihat dalam aksi",
+    "subtitle": "Setiap halaman dirancang untuk bekerja bersama — buka satu, lihat keseluruhan.",
+    "plan": "Plan — busur cerita dan beat",
+    "review": "Review — rubrik penyunting",
+    "chat": "Chat — bicara dengan WRITER"
+  },
+  "cta": {
+    "title": "Siap menulis novel pertama Anda?",
+    "desc": "Unduh gratis. Pakai kunci API Anda sendiri — atau tunggu integrasi Nexus untuk membeli kredit dalam aplikasi.",
+    "download": "Unduh untuk desktop",
+    "comingSoon": "DMG segera hadir",
+    "requirements": "macOS 12+ · Windows segera hadir · 200 MB"
+  },
+  "footer": {
+    "tagline": "Dibuat dengan tangan di perpustakaan magis",
+    "github": "GitHub",
+    "license": "Lisensi",
+    "contact": "Kontak",
+    "copyright": "© 2026 Shaman Technology · Dibuat dengan ✦ untuk para penulis"
+  }
+}

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0C1426" />
+
+  <!-- Progressive enhancement: scroll-reveal animations apply only when JS is active.
+       Without JS (or if init never runs) all content stays visible. -->
+  <script>
+    document.documentElement.classList.add("js");
+    document.addEventListener("DOMContentLoaded", function () {
+      /* Safety net: if the scroll-animation observer never initialized
+         (e.g. i18n.js failed to load), reveal everything so content is never lost. */
+      setTimeout(function () {
+        if (!window.__scrollAnimReady) {
+          document.querySelectorAll(".fade-in").forEach(function (el) {
+            el.classList.add("visible");
+          });
+        }
+      }, 1200);
+    });
+  </script>
+
+  <title>Magic Library — A Grimoire for your desktop</title>
+  <meta id="meta-description" name="description" content="Three AI agents collaborate to write your novel — world-building, drafting, and editing while you sip your tea." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Magic Library — A Grimoire for your desktop" />
+  <meta property="og:description" content="Three AI agents collaborate to write your novel." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://magic-library.shamantech.co/assets/logo.png" />
+  <meta property="og:url" content="https://magic-library.shamantech.co" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Noto+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Shared inline icon set (stroke style, themable via currentColor) -->
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></symbol>
+      <symbol id="i-feather" viewBox="0 0 24 24"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-map" viewBox="0 0 24 24"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.9a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0z"/><path d="M15 5.8v15"/><path d="M9 3.2v15"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-dock" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></symbol>
+      <symbol id="i-import" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="m8 7 4-4 4 4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/><path d="M13 17V9"/><path d="M18 17V5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ============== NAV ============== -->
+  <nav class="nav">
+    <a href="#" class="nav-brand">
+      <svg class="icon nav-brand-icon" width="26" height="26" aria-hidden="true"><use href="#i-book"/></svg>
+      <span class="nav-brand-text">The Scriptorium</span>
+    </a>
+    <div class="nav-links">
+      <a href="#agents" data-i18n="nav.agents">Agents</a>
+      <a href="#tools" data-i18n="nav.features">Features</a>
+      <a href="#pipeline" data-i18n="nav.pipeline">Pipeline</a>
+      <a href="#gallery" data-i18n="nav.screenshots">Screenshots</a>
+      <a href="#download" class="nav-download" data-i18n="nav.download">Download</a>
+      <div class="lang-switcher">
+        <button class="lang-button" id="lang-button" type="button" aria-haspopup="true" aria-expanded="false">
+          <span id="lang-current">English</span>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="menu"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============== HERO ============== -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="hero-eyebrow" data-i18n="hero.eyebrow">A Grimoire for your desktop</span>
+        <h1 class="hero-title" data-i18n-html="hero.title">Magic <span class="glyph">Library</span></h1>
+        <p class="hero-tagline" data-i18n="hero.tagline">
+          Three AI agents collaborate to write your novel — world-building, drafting, and editing while you sip your tea.
+        </p>
+        <div class="hero-cta">
+          <a id="download-btn" class="btn-primary" href="#download" aria-disabled="true">
+            <span data-i18n="hero.download">Download free</span>
+            <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>
+            <span class="coming-soon-badge" id="download-badge" data-i18n="hero.comingSoon">Coming soon</span>
+          </a>
+          <a class="btn-ghost" href="#agents" data-i18n="hero.learnMore">How it works</a>
+        </div>
+      </div>
+      <div class="hero-shot">
+        <div class="shot-window">
+          <div class="shot-bar" aria-hidden="true">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="shot-bar-title">Magic Library</span>
+          </div>
+          <img src="assets/screenshots/bookshelf-en.png" alt="Magic Library screenshot" width="1280" height="800" />
+        </div>
+        <div class="hero-shot-caption" data-i18n="hero.caption">✦ Grimoire · LORE · WRITER · CRITIC</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== AGENTS ============== -->
+  <section class="agents" id="agents">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow" data-i18n="agents.eyebrow">Three AI agents</div>
+      <h2 class="section-title" data-i18n="agents.title">The Keeper, the Scribe, and the Editor</h2>
+      <p class="section-subtitle" data-i18n="agents.subtitle">Each is a specialist. Together, they are a workshop.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="agents-grid">
+      <div class="agent-card lore fade-in">
+        <div class="agent-glyph"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-book"/></svg></div>
+        <div class="agent-role" data-i18n="agents.lore.role">Lore Keeper</div>
+        <h3 class="agent-name" data-i18n="agents.lore.name">The Keeper</h3>
+        <p class="agent-desc" data-i18n="agents.lore.desc">
+          Remembers every detail of your world, characters, and rules — keeping continuity across chapters.
+        </p>
+      </div>
+
+      <div class="agent-card writer fade-in">
+        <div class="agent-glyph"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-feather"/></svg></div>
+        <div class="agent-role" data-i18n="agents.writer.role">Scribe</div>
+        <h3 class="agent-name" data-i18n="agents.writer.name">The Scribe</h3>
+        <p class="agent-desc" data-i18n="agents.writer.desc">
+          Drafts chapter by chapter from your story plan — in the style and direction you choose.
+        </p>
+      </div>
+
+      <div class="agent-card critic fade-in">
+        <div class="agent-glyph"><svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-eye"/></svg></div>
+        <div class="agent-role" data-i18n="agents.critic.role">Editor</div>
+        <h3 class="agent-name" data-i18n="agents.critic.name">The Editor</h3>
+        <p class="agent-desc" data-i18n="agents.critic.desc">
+          Reviews each chapter with a piercing eye — scores it and points out what to refine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== TOOLS ============== -->
+  <section class="tools" id="tools">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow" data-i18n="tools.eyebrow">Workshop tools</div>
+      <h2 class="section-title" data-i18n="tools.title">Everything you need, every step of the way</h2>
+      <p class="section-subtitle" data-i18n="tools.subtitle">From outline to delivery, all in one place.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-map"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.plan.name">Story Plan</h3>
+        <p class="tool-desc" data-i18n="tools.plan.desc">Outline the narrative, break it into acts and beats, with status and ordering.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-globe"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.world.name">World KB</h3>
+        <p class="tool-desc" data-i18n="tools.world.desc">Build entities for characters, places, factions, and artifacts — with relationships.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-dock"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.dock.name">Arcane Dock</h3>
+        <p class="tool-desc" data-i18n="tools.dock.desc">Chat with any agent via a slide-in dock on every page — never lose context.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-import"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.ingest.name">Ingest</h3>
+        <p class="tool-desc" data-i18n="tools.ingest.desc">Import .docx / .pdf — let AI extract characters and lore automatically.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-export"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.export.name">Export</h3>
+        <p class="tool-desc" data-i18n="tools.export.desc">Export to Markdown, PDF, or eBook — per chapter or compiled as a tome.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-chat"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.chat.name">Chat</h3>
+        <p class="tool-desc" data-i18n="tools.chat.desc">Talk to WRITER in real time — ask to continue, expand, or summarize.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-clock"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.schedules.name">Schedules</h3>
+        <p class="tool-desc" data-i18n="tools.schedules.desc">Set a cron schedule for autonomous writing — hourly, daily, or weekly.</p>
+      </div>
+      <div class="tool-card fade-in">
+        <div class="tool-icon"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-chart"/></svg></div>
+        <h3 class="tool-name" data-i18n="tools.rubric.name">Critic Rubric</h3>
+        <p class="tool-desc" data-i18n="tools.rubric.desc">A 5-dimension rubric — lore, character voice, plot, prose, continuity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PIPELINE ============== -->
+  <section class="pipeline" id="pipeline">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow" data-i18n="pipeline.eyebrow">Autonomous pipeline</div>
+      <h2 class="section-title" data-i18n="pipeline.title">One click. A new chapter.</h2>
+      <p class="section-subtitle" data-i18n="pipeline.subtitle">
+        LORE preps → WRITER drafts → CRITIC scores → if it passes, the chapter is saved.
+      </p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="pipeline-flow">
+      <div class="pipeline-stage stage-lore fade-in">
+        <div class="stage-num" data-i18n="pipeline.stages.prep.num">01</div>
+        <div class="stage-glyph"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-book"/></svg></div>
+        <h3 class="stage-name" data-i18n="pipeline.stages.prep.name">LORE prep</h3>
+        <p class="stage-desc" data-i18n="pipeline.stages.prep.desc">Reviews the last chapter, builds writer guidelines, summarizes the story so far.</p>
+      </div>
+      <div class="pipeline-arrow" aria-hidden="true"><svg class="icon" width="22" height="22"><use href="#i-arrow"/></svg></div>
+      <div class="pipeline-stage stage-writer fade-in">
+        <div class="stage-num" data-i18n="pipeline.stages.write.num">02</div>
+        <div class="stage-glyph"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-feather"/></svg></div>
+        <h3 class="stage-name" data-i18n="pipeline.stages.write.name">WRITER drafts</h3>
+        <p class="stage-desc" data-i18n="pipeline.stages.write.desc">Drafts a new chapter from the plan, using tools to search the world.</p>
+      </div>
+      <div class="pipeline-arrow" aria-hidden="true"><svg class="icon" width="22" height="22"><use href="#i-arrow"/></svg></div>
+      <div class="pipeline-stage stage-critic fade-in">
+        <div class="stage-num" data-i18n="pipeline.stages.review.num">03</div>
+        <div class="stage-glyph"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-eye"/></svg></div>
+        <h3 class="stage-name" data-i18n="pipeline.stages.review.name">CRITIC reviews</h3>
+        <p class="stage-desc" data-i18n="pipeline.stages.review.desc">Scores 0–10 across 5 dimensions. Must hit 7+ to pass.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-features">
+      <div class="pipeline-feature fade-in">
+        <h4 class="pipeline-feature-title" data-i18n="pipeline.features.cron.title">Scheduled runs</h4>
+        <p class="pipeline-feature-desc" data-i18n="pipeline.features.cron.desc">Cron-based scheduler — write every hour, day, or week.</p>
+      </div>
+      <div class="pipeline-feature fade-in">
+        <h4 class="pipeline-feature-title" data-i18n="pipeline.features.loop.title">Loop until it passes</h4>
+        <p class="pipeline-feature-desc" data-i18n="pipeline.features.loop.desc">If CRITIC rejects, WRITER rewrites based on the feedback, up to 3 times.</p>
+      </div>
+      <div class="pipeline-feature fade-in">
+        <h4 class="pipeline-feature-title" data-i18n="pipeline.features.budget.title">Time-bounded</h4>
+        <p class="pipeline-feature-desc" data-i18n="pipeline.features.budget.desc">Hard 35-minute ceiling — no run ever pins your machine overnight.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== GALLERY ============== -->
+  <section class="gallery" id="gallery">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow" data-i18n="gallery.eyebrow">Inside the app</div>
+      <h2 class="section-title" data-i18n="gallery.title">See it in action</h2>
+      <p class="section-subtitle" data-i18n="gallery.subtitle">Every page is designed to work with the others.</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item fade-in">
+        <img src="assets/screenshots/story-plan-en.png" alt="Plan" loading="lazy" width="1280" height="800" />
+        <figcaption class="gallery-item-caption" data-i18n="gallery.plan">Plan — story arcs and beats</figcaption>
+      </figure>
+      <figure class="gallery-item fade-in">
+        <img src="assets/screenshots/review-en.png" alt="Review" loading="lazy" width="1280" height="800" />
+        <figcaption class="gallery-item-caption" data-i18n="gallery.review">Review — editor rubric</figcaption>
+      </figure>
+      <figure class="gallery-item fade-in">
+        <img src="assets/screenshots/chat-en.png" alt="Chat" loading="lazy" width="1280" height="800" />
+        <figcaption class="gallery-item-caption" data-i18n="gallery.chat">Chat — talk to WRITER</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============== CTA ============== -->
+  <section class="cta" id="download">
+    <div class="cta-card fade-in">
+      <h2 class="cta-title" data-i18n="cta.title">Ready to write your first novel?</h2>
+      <p class="cta-desc" data-i18n="cta.desc">
+        Free download. Bring your own API key — or wait for Nexus integration to buy credits in-app.
+      </p>
+      <a id="download-btn-2" class="btn-primary" href="#download" aria-disabled="true">
+        <span data-i18n="cta.download">Download for desktop</span>
+        <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>
+      </a>
+      <div class="cta-requirements" data-i18n="cta.requirements">macOS 12+ · Windows coming soon · 200 MB</div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="footer-brand">Magic Library</div>
+    <div class="footer-tagline" data-i18n="footer.tagline">Handcrafted in a magic library</div>
+    <div class="footer-links">
+      <a href="https://github.com/Azaze10x/magic-library" data-i18n="footer.github">GitHub</a>
+      <a href="https://github.com/Azaze10x/magic-library/blob/main/LICENSE" data-i18n="footer.license">License</a>
+      <a href="mailto:info@shamantech.co" data-i18n="footer.contact">Contact</a>
+    </div>
+    <div class="footer-copy" data-i18n="footer.copyright">© 2026 Shaman Technology · Made with ✦ for writers</div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="download.js"></script>
+</body>
+</html>
