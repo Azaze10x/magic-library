@@ -121,7 +121,13 @@
     "subtitle": "Setiap halaman dirancang untuk bekerja bersama — buka satu, lihat keseluruhan.",
     "plan": "Plan — busur cerita dan beat",
     "review": "Review — rubrik penyunting",
-    "chat": "Chat — bicara dengan WRITER"
+    "chat": "Chat — bicara dengan WRITER",
+    "bookshelf": "Perpustakaan — rak buku Anda"
+  },
+  "lightbox": {
+    "close": "Tutup",
+    "previous": "Tangkapan sebelumnya",
+    "next": "Tangkapan berikutnya"
   },
   "cta": {
     "title": "Siap menulis novel pertama Anda?",

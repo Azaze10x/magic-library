@@ -62,6 +62,10 @@
       <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M8 17v-3"/><path d="M13 17V9"/><path d="M18 17V5"/></symbol>
       <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></symbol>
       <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+      <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-expand" viewBox="0 0 24 24"><path d="m15 3 6 6-6-6"/><path d="m9 21-6-6 6 6"/><path d="M21 9V3h-6M3 15v6h6"/></symbol>
     </defs>
   </svg>
 
@@ -118,7 +122,7 @@
           <a class="btn-ghost" href="#agents" data-i18n="hero.learnMore">How it works</a>
         </div>
       </div>
-      <div class="hero-shot">
+      <div class="hero-shot" data-lightbox-index="0" role="button" tabindex="0" aria-label="Open screenshot viewer">
         <div class="shot-window">
           <div class="shot-bar" aria-hidden="true">
             <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
@@ -283,20 +287,58 @@
     </div>
 
     <div class="gallery-grid">
-      <figure class="gallery-item fade-in">
-        <img src="assets/screenshots/story-plan-en.png" alt="Plan" loading="lazy" width="1280" height="800" />
+      <figure class="gallery-item fade-in" data-lightbox-index="1" role="button" tabindex="0" aria-label="Open screenshot viewer">
+        <div class="gallery-item-frame">
+          <img src="assets/screenshots/story-plan-en.png" alt="Plan" loading="lazy" width="1280" height="800" />
+          <span class="gallery-item-overlay" aria-hidden="true"><svg class="icon" width="28" height="28"><use href="#i-expand"/></svg></span>
+        </div>
         <figcaption class="gallery-item-caption" data-i18n="gallery.plan">Plan — story arcs and beats</figcaption>
       </figure>
-      <figure class="gallery-item fade-in">
-        <img src="assets/screenshots/review-en.png" alt="Review" loading="lazy" width="1280" height="800" />
+      <figure class="gallery-item fade-in" data-lightbox-index="2" role="button" tabindex="0" aria-label="Open screenshot viewer">
+        <div class="gallery-item-frame">
+          <img src="assets/screenshots/review-en.png" alt="Review" loading="lazy" width="1280" height="800" />
+          <span class="gallery-item-overlay" aria-hidden="true"><svg class="icon" width="28" height="28"><use href="#i-expand"/></svg></span>
+        </div>
         <figcaption class="gallery-item-caption" data-i18n="gallery.review">Review — editor rubric</figcaption>
       </figure>
-      <figure class="gallery-item fade-in">
-        <img src="assets/screenshots/chat-en.png" alt="Chat" loading="lazy" width="1280" height="800" />
+      <figure class="gallery-item fade-in" data-lightbox-index="3" role="button" tabindex="0" aria-label="Open screenshot viewer">
+        <div class="gallery-item-frame">
+          <img src="assets/screenshots/chat-en.png" alt="Chat" loading="lazy" width="1280" height="800" />
+          <span class="gallery-item-overlay" aria-hidden="true"><svg class="icon" width="28" height="28"><use href="#i-expand"/></svg></span>
+        </div>
         <figcaption class="gallery-item-caption" data-i18n="gallery.chat">Chat — talk to WRITER</figcaption>
       </figure>
     </div>
   </section>
+
+  <!-- ============== LIGHTBOX ============== -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button">
+      <svg class="icon" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      <span class="visually-hidden" data-i18n="lightbox.close">Close</span>
+    </button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button">
+      <svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-chevron-left"/></svg>
+      <span class="visually-hidden" data-i18n="lightbox.previous">Previous screenshot</span>
+    </button>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button">
+      <svg class="icon" width="28" height="28" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+      <span class="visually-hidden" data-i18n="lightbox.next">Next screenshot</span>
+    </button>
+    <div class="lightbox-stage">
+      <div class="lightbox-frame">
+        <div class="shot-bar" aria-hidden="true">
+          <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+          <span class="shot-bar-title">Magic Library</span>
+        </div>
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-meta">
+        <span class="lightbox-caption" id="lightbox-caption"></span>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+      </div>
+    </div>
+  </div>
 
   <!-- ============== CTA ============== -->
   <section class="cta" id="download">
@@ -328,5 +370,6 @@
   <script src="i18n.js"></script>
   <script src="download.js"></script>
   <script src="magic.js"></script>
+  <script src="gallery.js"></script>
 </body>
 </html>

@@ -121,7 +121,13 @@
     "subtitle": "Every page is designed to work with the others — open one and see the whole picture.",
     "plan": "Plan — story arcs and beats",
     "review": "Review — editor rubric",
-    "chat": "Chat — talk to WRITER"
+    "chat": "Chat — talk to WRITER",
+    "bookshelf": "Library — your bookshelf"
+  },
+  "lightbox": {
+    "close": "Close",
+    "previous": "Previous screenshot",
+    "next": "Next screenshot"
   },
   "cta": {
     "title": "Ready to write your first novel?",

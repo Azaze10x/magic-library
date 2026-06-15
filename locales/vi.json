@@ -121,7 +121,13 @@
     "subtitle": "Mỗi trang được thiết kế để làm việc cùng nhau — mở một trang, thấy cả bức tranh.",
     "plan": "Plan — vòng cung và beat",
     "review": "Review — thước đo biên tập",
-    "chat": "Chat — nói chuyện với Tác giả"
+    "chat": "Chat — nói chuyện với Tác giả",
+    "bookshelf": "Thư viện — kệ sách của bạn"
+  },
+  "lightbox": {
+    "close": "Đóng",
+    "previous": "Ảnh trước",
+    "next": "Ảnh sau"
   },
   "cta": {
     "title": "Sẵn sàng viết cuốn tiểu thuyết đầu tiên?",
