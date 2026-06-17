@@ -8,6 +8,7 @@
     "agents": "Agen",
     "screenshots": "Tangkapan",
     "pipeline": "Pipeline",
+    "nexus": "Nexus",
     "download": "Unduh"
   },
   "hero": {
@@ -131,10 +132,35 @@
   },
   "cta": {
     "title": "Siap menulis novel pertama Anda?",
-    "desc": "Unduh gratis. Pakai kunci API Anda sendiri — atau tunggu integrasi Nexus untuk membeli kredit dalam aplikasi.",
+    "desc": "Unduh gratis. Pakai kunci API Anda sendiri — atau beli kredit di Nexus untuk akses instan ke model AI terbaik.",
     "download": "Unduh untuk desktop",
     "comingSoon": "DMG segera hadir",
     "requirements": "macOS 12+ · Windows segera hadir · 200 MB"
+  },
+  "nexus": {
+    "eyebrow": "Didukung oleh Nexus",
+    "title": "Pakai kunci API sendiri — atau cukup beli kredit.",
+    "subtitle": "Nexus memberi Anda akses instan ke model AI terbaik tanpa harus mengurus banyak kunci API.",
+    "body": "Magic Library bekerja dengan kunci API apa pun yang kompatibel dengan OpenAI yang sudah Anda miliki. Nexus adalah jalur yang lebih mudah: beli paket kredit sekali, dan setiap agen dalam aplikasi menggunakan dari pool yang sama — tanpa banyak akun, tanpa tagihan per model.",
+    "plans": {
+      "creator": {
+        "name": "Creator",
+        "credits": "1.000 kredit",
+        "price": "฿350 / bln"
+      },
+      "pro": {
+        "name": "Pro",
+        "credits": "3.000 kredit",
+        "price": "฿1.050 / bln"
+      },
+      "studio": {
+        "name": "Studio",
+        "credits": "10.000 kredit",
+        "price": "฿3.500 / bln"
+      }
+    },
+    "cta": "Dapatkan kredit di Nexus",
+    "byoNote": "Kunci API Anda sendiri tetap berfungsi — Nexus adalah jalur yang lebih mudah, bukan satu-satunya."
   },
   "footer": {
     "tagline": "Dibuat dengan tangan di perpustakaan magis",

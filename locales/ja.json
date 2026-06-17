@@ -8,6 +8,7 @@
     "agents": "エージェント",
     "screenshots": "スクリーンショット",
     "pipeline": "パイプライン",
+    "nexus": "Nexus",
     "download": "ダウンロード"
   },
   "hero": {
@@ -131,10 +132,35 @@
   },
   "cta": {
     "title": "最初の一冊を書く準備はできた?",
-    "desc": "無料ダウンロード。API キーを持参 — または Nexus 連携でアプリ内クレジット購入を待つ。",
+    "desc": "無料ダウンロード。API キーを持参 — または Nexus でクレジットを購入してトップ AI モデルに即アクセス。",
     "download": "デスクトップ版をダウンロード",
     "comingSoon": "DMG 近日公開",
     "requirements": "macOS 12+ · Windows 近日対応 · 200 MB"
+  },
+  "nexus": {
+    "eyebrow": "Nexus が支える",
+    "title": "APIキーを持ち込む — またはクレジットを買うだけ。",
+    "subtitle": "Nexus なら、複数の API キーを管理せずにトップ AI モデルへ即アクセス。",
+    "body": "Magic Library はすでにお持ちの OpenAI 互換 API キーで動作します。Nexus はより簡単な道：クレジットバンドルを一度購入するだけで、アプリ内のすべてのエージェントが同じプールから利用できます — 複数アカウント不要、モデルごとの課金なし。",
+    "plans": {
+      "creator": {
+        "name": "クリエイター",
+        "credits": "1,000 クレジット",
+        "price": "฿350 / 月"
+      },
+      "pro": {
+        "name": "プロ",
+        "credits": "3,000 クレジット",
+        "price": "฿1,050 / 月"
+      },
+      "studio": {
+        "name": "スタジオ",
+        "credits": "10,000 クレジット",
+        "price": "฿3,500 / 月"
+      }
+    },
+    "cta": "Nexus でクレジットを取得",
+    "byoNote": "自分の API キーは引き続き使えます — Nexus はより手軽な選択肢であり、唯一の方法ではありません。"
   },
   "footer": {
     "tagline": "魔法の図書館で手作り",

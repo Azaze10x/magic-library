@@ -8,6 +8,7 @@
     "agents": "Agents",
     "screenshots": "Screenshots",
     "pipeline": "Pipeline",
+    "nexus": "Nexus",
     "download": "Download"
   },
   "hero": {
@@ -131,10 +132,35 @@
   },
   "cta": {
     "title": "Ready to write your first novel?",
-    "desc": "Free download. Bring your own API key — or wait for Nexus integration to buy credits in-app.",
+    "desc": "Free download. Bring your own API key — or buy credits on Nexus for instant access to top models.",
     "download": "Download for desktop",
     "comingSoon": "DMG coming soon",
     "requirements": "macOS 12+ · Windows coming soon · 200 MB"
+  },
+  "nexus": {
+    "eyebrow": "Powered by Nexus",
+    "title": "Bring your own key — or just buy credits.",
+    "subtitle": "Nexus gives you instant access to top AI models without juggling API keys.",
+    "body": "Magic Library works with any OpenAI-compatible API key you already have. Nexus is the easy path: buy a credit bundle once and every agent in the app draws from the same pool — no accounts, no per-model billing.",
+    "plans": {
+      "creator": {
+        "name": "Creator",
+        "credits": "1,000 credits",
+        "price": "฿350 / mo"
+      },
+      "pro": {
+        "name": "Pro",
+        "credits": "3,000 credits",
+        "price": "฿1,050 / mo"
+      },
+      "studio": {
+        "name": "Studio",
+        "credits": "10,000 credits",
+        "price": "฿3,500 / mo"
+      }
+    },
+    "cta": "Get credits on Nexus",
+    "byoNote": "Your own API key still works — Nexus is the frictionless path, not the only one."
   },
   "footer": {
     "tagline": "Handcrafted in a magic library",

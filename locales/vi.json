@@ -8,6 +8,7 @@
     "agents": "Trợ lý",
     "screenshots": "Hình ảnh",
     "pipeline": "Pipeline",
+    "nexus": "Nexus",
     "download": "Tải về"
   },
   "hero": {
@@ -131,10 +132,35 @@
   },
   "cta": {
     "title": "Sẵn sàng viết cuốn tiểu thuyết đầu tiên?",
-    "desc": "Tải về miễn phí. Mang theo khóa API của bạn — hoặc chờ tích hợp Nexus để mua credit trong ứng dụng.",
+    "desc": "Tải về miễn phí. Mang theo khóa API của bạn — hoặc mua credit trên Nexus để truy cập ngay vào các mô hình AI hàng đầu.",
     "download": "Tải về cho máy tính",
     "comingSoon": "DMG sắp ra mắt",
     "requirements": "macOS 12+ · Windows sắp ra mắt · 200 MB"
+  },
+  "nexus": {
+    "eyebrow": "Được hỗ trợ bởi Nexus",
+    "title": "Dùng khóa API của bạn — hoặc chỉ cần mua credit.",
+    "subtitle": "Nexus cho phép truy cập ngay vào các mô hình AI hàng đầu mà không cần quản lý nhiều khóa API.",
+    "body": "Magic Library hoạt động với bất kỳ khóa API tương thích OpenAI nào bạn đã có. Nexus là con đường dễ hơn: mua một gói credit một lần và mọi trợ lý trong ứng dụng đều dùng chung từ cùng một pool — không cần nhiều tài khoản, không tính phí theo từng mô hình.",
+    "plans": {
+      "creator": {
+        "name": "Creator",
+        "credits": "1.000 credit",
+        "price": "฿350 / tháng"
+      },
+      "pro": {
+        "name": "Pro",
+        "credits": "3.000 credit",
+        "price": "฿1.050 / tháng"
+      },
+      "studio": {
+        "name": "Studio",
+        "credits": "10.000 credit",
+        "price": "฿3.500 / tháng"
+      }
+    },
+    "cta": "Mua credit trên Nexus",
+    "byoNote": "Khóa API của bạn vẫn hoạt động bình thường — Nexus là con đường thuận tiện hơn, không phải con đường duy nhất."
   },
   "footer": {
     "tagline": "Làm thủ công tại thư viện phép thuật",

@@ -1274,6 +1274,157 @@ section {
   }
 }
 
+/* ============== NEXUS (dark chapter) ============== */
+.nexus {
+  background:
+    radial-gradient(ellipse 900px 500px at 60% 40%, rgba(159, 122, 234, 0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 600px 400px at 20% 70%, rgba(201, 162, 75, 0.09) 0%, transparent 60%),
+    linear-gradient(180deg, var(--night) 0%, #0E1830 100%);
+  color: var(--parchment-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.nexus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/textures/dark-leather.png");
+  background-size: 400px;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.nexus .section-eyebrow {
+  color: var(--gold-bright);
+}
+
+.nexus .section-title {
+  color: var(--parchment-light);
+}
+
+.nexus .section-subtitle {
+  color: rgba(243, 233, 210, 0.75);
+}
+
+.nexus .divider::before {
+  background: #0E1830;
+}
+
+.nexus-body {
+  max-width: 760px;
+  margin: 0 auto 64px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nexus-explainer {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(243, 233, 210, 0.78);
+  font-style: italic;
+}
+
+.nexus-plans {
+  max-width: 900px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.nexus-plan-card {
+  padding: 36px 28px;
+  background: rgba(243, 233, 210, 0.05);
+  border: 1px solid rgba(201, 162, 75, 0.25);
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.35s, border-color 0.35s, background 0.35s;
+}
+
+.nexus-plan-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 162, 75, 0.5);
+  background: rgba(243, 233, 210, 0.08);
+}
+
+.nexus-plan-card.nexus-plan-featured {
+  border-color: rgba(159, 122, 234, 0.55);
+  background: rgba(159, 122, 234, 0.08);
+  box-shadow: 0 0 40px rgba(159, 122, 234, 0.18);
+}
+
+.nexus-plan-card.nexus-plan-featured:hover {
+  border-color: rgba(159, 122, 234, 0.8);
+  background: rgba(159, 122, 234, 0.14);
+}
+
+.nexus-plan-name {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin-bottom: 16px;
+}
+
+.nexus-plan-featured .nexus-plan-name {
+  color: var(--ethereal-soft);
+}
+
+.nexus-plan-credits {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--parchment-light);
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.nexus-plan-price {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: rgba(243, 233, 210, 0.65);
+  font-style: italic;
+}
+
+.nexus-cta {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nexus-btn {
+  margin-bottom: 20px;
+}
+
+.nexus-byo-note {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-style: italic;
+  color: rgba(243, 233, 210, 0.5);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .nexus-plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .nexus-plans {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
 /* ============== CTA (dark finale) ============== */
 .cta {
   background:

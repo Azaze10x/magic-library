@@ -8,6 +8,7 @@
     "agents": "助手",
     "screenshots": "预览",
     "pipeline": "流水线",
+    "nexus": "Nexus",
     "download": "下载"
   },
   "hero": {
@@ -131,10 +132,35 @@
   },
   "cta": {
     "title": "准备好写你的第一本小说了吗?",
-    "desc": "免费下载,自带 API 密钥即可使用 — 或等待 Nexus 上线后在应用内购买额度。",
+    "desc": "免费下载,自带 API 密钥即可使用 — 或在 Nexus 上购买额度，即时访问顶级 AI 模型。",
     "download": "下载桌面版",
     "comingSoon": "DMG 即将发布",
     "requirements": "macOS 12+ · Windows 即将推出 · 200 MB"
+  },
+  "nexus": {
+    "eyebrow": "由 Nexus 驱动",
+    "title": "自带密钥，或直接购买额度。",
+    "subtitle": "Nexus 让你无需管理多个 API 密钥，即可即时访问顶级 AI 模型。",
+    "body": "Magic Library 兼容你已有的任何 OpenAI 兼容 API 密钥。Nexus 是更省心的路径：一次购买额度包，应用中每个智能体都从同一池中扣取 — 无需多个账号，无需按模型分开计费。",
+    "plans": {
+      "creator": {
+        "name": "创作者",
+        "credits": "1,000 额度",
+        "price": "฿350 / 月"
+      },
+      "pro": {
+        "name": "专业版",
+        "credits": "3,000 额度",
+        "price": "฿1,050 / 月"
+      },
+      "studio": {
+        "name": "工作室版",
+        "credits": "10,000 额度",
+        "price": "฿3,500 / 月"
+      }
+    },
+    "cta": "前往 Nexus 购买额度",
+    "byoNote": "你自己的 API 密钥依然有效 — Nexus 是更顺畅的路径，而非唯一选择。"
   },
   "footer": {
     "tagline": "于魔法图书馆中手工打造",
