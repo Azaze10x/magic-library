@@ -1680,3 +1680,39 @@ section {
     transform: none !important;
   }
 }
+
+/* ---------- Cross-platform download affordances ---------- */
+
+/* Secondary link to the installer for the platform the visitor is NOT on.
+   Deliberately quiet: the primary CTA already matches their OS. */
+.download-alt {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.6px;
+  color: rgba(243, 233, 210, 0.55);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.download-alt:hover,
+.download-alt:focus-visible {
+  color: rgba(243, 233, 210, 0.85);
+}
+
+/* SmartScreen explainer, shown to Windows visitors only. */
+.download-note {
+  max-width: 52ch;
+  margin: 18px auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(243, 233, 210, 0.6);
+  text-align: center;
+}
+
+.download-alt[hidden],
+.download-note[hidden] {
+  display: none;
+}

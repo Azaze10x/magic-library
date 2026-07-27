@@ -135,7 +135,7 @@
     "desc": "ดาวน์โหลดฟรี ใช้ API key ของคุณเอง หรือซื้อ credit บน Nexus เพื่อเข้าถึงโมเดล AI ชั้นนำได้ทันที",
     "download": "ดาวน์โหลดสำหรับเดสก์ท็อป",
     "comingSoon": "DMG เร็วๆ นี้",
-    "requirements": "macOS 12+ · Windows เร็วๆ นี้ · 200 MB"
+    "requirements": "macOS 12+ · Windows 10+ · 200 MB"
   },
   "nexus": {
     "eyebrow": "ขับเคลื่อนโดย Nexus",
@@ -176,5 +176,12 @@
   "terms": {
     "title": "ข้อตกลงการใช้งาน",
     "meta": "Last updated · 2026-06-10"
+  },
+  "download": {
+    "forMac": "ดาวน์โหลดสำหรับ macOS",
+    "forWindows": "ดาวน์โหลดสำหรับ Windows",
+    "altMac": "มีเวอร์ชัน macOS ด้วย",
+    "altWindows": "มีเวอร์ชัน Windows ด้วย",
+    "winSmartScreen": "ครั้งแรกที่เปิดตัวติดตั้ง Windows จะขึ้นข้อความ “Windows protected your PC” ให้กด More info แล้วเลือก Run anyway ข้อความนี้ขึ้นเพราะตัวติดตั้งยังไม่ได้เซ็นใบรับรอง ไม่ได้แปลว่าไฟล์มีปัญหา"
   }
 }

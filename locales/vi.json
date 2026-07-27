@@ -135,7 +135,7 @@
     "desc": "Tải về miễn phí. Mang theo khóa API của bạn — hoặc mua credit trên Nexus để truy cập ngay vào các mô hình AI hàng đầu.",
     "download": "Tải về cho máy tính",
     "comingSoon": "DMG sắp ra mắt",
-    "requirements": "macOS 12+ · Windows sắp ra mắt · 200 MB"
+    "requirements": "macOS 12+ · Windows 10+ · 200 MB"
   },
   "nexus": {
     "eyebrow": "Được hỗ trợ bởi Nexus",
@@ -176,5 +176,12 @@
   "terms": {
     "title": "Điều khoản Sử dụng",
     "meta": "Last updated · 2026-06-10"
+  },
+  "download": {
+    "forMac": "Tải cho macOS",
+    "forWindows": "Tải cho Windows",
+    "altMac": "Cũng có bản cho macOS",
+    "altWindows": "Cũng có bản cho Windows",
+    "winSmartScreen": "Lần đầu chạy trình cài đặt, Windows sẽ hiện “Windows protected your PC”. Hãy chọn More info → Run anyway. Thông báo này xuất hiện vì trình cài đặt chưa được ký số, không phải vì tệp tải về có vấn đề."
   }
 }

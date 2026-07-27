@@ -135,7 +135,7 @@
     "desc": "無料ダウンロード。API キーを持参 — または Nexus でクレジットを購入してトップ AI モデルに即アクセス。",
     "download": "デスクトップ版をダウンロード",
     "comingSoon": "DMG 近日公開",
-    "requirements": "macOS 12+ · Windows 近日対応 · 200 MB"
+    "requirements": "macOS 12+ · Windows 10+ · 200 MB"
   },
   "nexus": {
     "eyebrow": "Nexus が支える",
@@ -176,5 +176,12 @@
   "terms": {
     "title": "利用規約",
     "meta": "Last updated · 2026-06-10"
+  },
+  "download": {
+    "forMac": "macOS 版をダウンロード",
+    "forWindows": "Windows 版をダウンロード",
+    "altMac": "macOS 版もあります",
+    "altWindows": "Windows 版もあります",
+    "winSmartScreen": "インストーラーを初めて実行すると、Windows に「Windows によって PC が保護されました」と表示されます。「詳細情報」→「実行」を選んでください。これはインストーラーがまだコード署名されていないためで、ファイルに問題があるわけではありません。"
   }
 }

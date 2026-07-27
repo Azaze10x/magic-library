@@ -122,6 +122,9 @@
           </a>
           <a class="btn-ghost" href="#agents" data-i18n="hero.learnMore">How it works</a>
         </div>
+        <!-- Filled in by download.js once the release API answers: points at
+             whichever installer is NOT the visitor's platform. -->
+        <a class="download-alt" data-download-alt hidden></a>
       </div>
       <div class="hero-shot" data-lightbox-index="0" role="button" tabindex="0" aria-label="Open screenshot viewer">
         <div class="shot-window">
@@ -394,7 +397,16 @@
         <span data-i18n="cta.download">Download for desktop</span>
         <svg class="icon" width="18" height="18" aria-hidden="true"><use href="#i-download"/></svg>
       </a>
-      <div class="cta-requirements" data-i18n="cta.requirements">macOS 12+ · Windows coming soon · 200 MB</div>
+      <a class="download-alt" data-download-alt hidden></a>
+      <div class="cta-requirements" data-i18n="cta.requirements">macOS 12+ · Windows 10+ · 200 MB</div>
+      <!-- Windows visitors only. The installer is not code-signed, so SmartScreen
+           interrupts the first run; saying so here, with the way through it, is
+           what keeps people from assuming the download is broken. -->
+      <p class="download-note" data-win-note hidden data-i18n="download.winSmartScreen">
+        Windows will show “Windows protected your PC” the first time you run the installer.
+        Choose More info → Run anyway. This appears because the installer is not yet
+        code-signed, not because anything is wrong with the download.
+      </p>
     </div>
   </section>
 

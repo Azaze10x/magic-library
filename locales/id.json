@@ -135,7 +135,7 @@
     "desc": "Unduh gratis. Pakai kunci API Anda sendiri — atau beli kredit di Nexus untuk akses instan ke model AI terbaik.",
     "download": "Unduh untuk desktop",
     "comingSoon": "DMG segera hadir",
-    "requirements": "macOS 12+ · Windows segera hadir · 200 MB"
+    "requirements": "macOS 12+ · Windows 10+ · 200 MB"
   },
   "nexus": {
     "eyebrow": "Didukung oleh Nexus",
@@ -176,5 +176,12 @@
   "terms": {
     "title": "Ketentuan Penggunaan",
     "meta": "Last updated · 2026-06-10"
+  },
+  "download": {
+    "forMac": "Unduh untuk macOS",
+    "forWindows": "Unduh untuk Windows",
+    "altMac": "Tersedia juga untuk macOS",
+    "altWindows": "Tersedia juga untuk Windows",
+    "winSmartScreen": "Saat pertama kali menjalankan penginstal, Windows akan menampilkan “Windows protected your PC”. Pilih More info → Run anyway. Pesan ini muncul karena penginstal belum ditandatangani secara digital, bukan karena ada masalah pada berkasnya."
   }
 }
