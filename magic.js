@@ -129,3 +129,15 @@
 
   start();
 })();
+
+/* The hero tour autoplays, which CSS cannot switch off. Anyone who has asked
+   for reduced motion gets the poster frame and nothing moving. */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce) return;
+  var v = document.querySelector(".shot-media");
+  if (!v) return;
+  v.removeAttribute("autoplay");
+  v.removeAttribute("loop");
+  v.pause();
+})();

@@ -614,7 +614,8 @@ button {
   color: rgba(243, 233, 210, 0.5);
 }
 
-.shot-window img {
+.shot-window img,
+.shot-window video {
   width: 100%;
   height: auto;
   display: block;

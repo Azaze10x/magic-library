@@ -112,7 +112,8 @@
         <span class="hero-eyebrow" data-i18n="hero.eyebrow">A Grimoire for your desktop</span>
         <h1 class="hero-title" data-i18n-html="hero.title">Magic <span class="glyph">Library</span></h1>
         <p class="hero-tagline" data-i18n="hero.tagline">
-          Three AI agents collaborate to write your novel — world-building, drafting, and editing while you sip your tea.
+          A writing team that keeps going while you sleep — planning your world, drafting the next
+          chapter, and holding it to a standard before it is kept.
         </p>
         <div class="hero-cta">
           <a id="download-btn" class="btn-primary" href="#download" aria-disabled="true">
@@ -132,9 +133,21 @@
             <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
             <span class="shot-bar-title">Magic Library</span>
           </div>
-          <img src="assets/screenshots/bookshelf-en.png" alt="Magic Library screenshot" width="1280" height="800" />
+          <!-- Muted, looping tour of the app. The poster is the still it
+               replaces, so the first paint is unchanged if the video is slow
+               or blocked, and the <img> inside is the fallback for anything
+               that cannot play it. Paused for prefers-reduced-motion in
+               magic.js, which cannot be done from CSS. -->
+          <video class="shot-media" width="1280" height="800" autoplay muted loop
+                 playsinline preload="metadata"
+                 poster="assets/screenshots/bookshelf-en.png"
+                 aria-label="Magic Library in use">
+            <source src="assets/hero-tour.mp4" type="video/mp4" />
+            <img src="assets/screenshots/bookshelf-en.png" alt="Magic Library screenshot"
+                 width="1280" height="800" />
+          </video>
         </div>
-        <div class="hero-shot-caption" data-i18n="hero.caption">✦ Grimoire · LORE · WRITER · CRITIC</div>
+        <div class="hero-shot-caption" data-i18n="hero.caption">✦ A desktop app — your manuscript stays on your machine</div>
       </div>
     </div>
   </section>
