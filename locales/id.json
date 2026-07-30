@@ -80,24 +80,24 @@
   "pipeline": {
     "eyebrow": "Saluran otomatis",
     "title": "Satu klik. Satu bab baru.",
-    "subtitle": "LORE bersiap → WRITER menulis → CRITIC menilai → jika lulus, bab tersimpan.",
+    "subtitle": "Penjaga Dunia bersiap → Penulis menulis → Penyunting menilai → jika lulus, bab tersimpan.",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "LORE bersiap",
+        "name": "Penjaga Dunia bersiap",
         "desc": "Meninjau bab terakhir, membangun pedoman penulis, merangkum cerita sejauh ini."
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "WRITER menulis",
+        "name": "Penulis menulis",
         "desc": "Menyusun bab baru dari rencana, memakai alat untuk menjelajah dunia dan bab-bab sebelumnya."
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "CRITIC menilai",
+        "name": "Penyunting menilai",
         "desc": "Skor 0–10 di lima dimensi. Harus mencapai 7+ untuk lulus."
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "Mengulang sampai lulus",
-        "desc": "Jika CRITIC menolak, WRITER menulis ulang berdasarkan masukan, hingga 3 kali."
+        "desc": "Jika Penyunting menolak, Penulis menulis ulang berdasarkan masukan, hingga 3 kali."
       },
       "budget": {
         "title": "Batas waktu",
@@ -122,7 +122,7 @@
     "subtitle": "Setiap halaman dirancang untuk bekerja bersama — buka satu, lihat keseluruhan.",
     "plan": "Plan — busur cerita dan beat",
     "review": "Review — rubrik penyunting",
-    "chat": "Chat — bicara dengan WRITER",
+    "chat": "Chat — bicara dengan Penulis",
     "bookshelf": "Perpustakaan — rak buku Anda"
   },
   "lightbox": {

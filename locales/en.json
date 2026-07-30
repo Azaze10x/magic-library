@@ -66,7 +66,7 @@
     },
     "chat": {
       "name": "Chat",
-      "desc": "Talk to WRITER in real time — ask to continue, expand, or summarize."
+      "desc": "Talk to the Writer in real time — ask to continue, expand, or summarize."
     },
     "schedules": {
       "name": "Schedules",
@@ -80,24 +80,24 @@
   "pipeline": {
     "eyebrow": "Autonomous pipeline",
     "title": "One click. A new chapter.",
-    "subtitle": "LORE preps → WRITER drafts → CRITIC scores → if it passes, the chapter is saved.",
+    "subtitle": "The Keeper preps → The Writer drafts → The Editor scores → if it passes, the chapter is saved.",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "LORE prep",
+        "name": "The Keeper preps",
         "desc": "Reviews the last chapter, builds writer guidelines, summarizes the story so far."
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "WRITER drafts",
+        "name": "The Writer drafts",
         "desc": "Drafts a new chapter from the plan, using tools to search the world and previous chapters."
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "CRITIC reviews",
+        "name": "The Editor reviews",
         "desc": "Scores 0–10 across 5 dimensions. Must hit 7+ to pass."
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "Loop until it passes",
-        "desc": "If CRITIC rejects, WRITER rewrites based on the feedback, up to 3 times."
+        "desc": "If the Editor rejects it, the Writer rewrites from the notes, up to 3 times."
       },
       "budget": {
         "title": "Time-bounded",
@@ -122,7 +122,7 @@
     "subtitle": "Every page is designed to work with the others — open one and see the whole picture.",
     "plan": "Plan — story arcs and beats",
     "review": "Review — editor rubric",
-    "chat": "Chat — talk to WRITER",
+    "chat": "Chat — talk to the Writer",
     "bookshelf": "Library — your bookshelf"
   },
   "lightbox": {
