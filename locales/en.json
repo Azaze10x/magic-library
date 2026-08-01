@@ -22,21 +22,21 @@
   },
   "agents": {
     "eyebrow": "Three AI agents",
-    "title": "The Keeper, the Scribe, and the Editor",
+    "title": "World-Builder, Co-Writer, and Editor",
     "subtitle": "Each is a specialist. Together, they are a workshop.",
     "lore": {
-      "role": "Lore Keeper",
-      "name": "The Keeper",
+      "role": "Keeps the world straight",
+      "name": "World-Builder",
       "desc": "Remembers every detail of your world, characters, and rules — keeping continuity across chapters."
     },
     "writer": {
-      "role": "Scribe",
-      "name": "The Scribe",
+      "role": "Writes the chapters",
+      "name": "Co-Writer",
       "desc": "Drafts chapter by chapter from your story plan — in the style and direction you choose."
     },
     "critic": {
-      "role": "Editor",
-      "name": "The Editor",
+      "role": "Holds the standard",
+      "name": "Editor",
       "desc": "Reviews each chapter with a piercing eye — scores it and points out what to refine."
     }
   },
@@ -66,38 +66,38 @@
     },
     "chat": {
       "name": "Chat",
-      "desc": "Talk to the Writer in real time — ask to continue, expand, or summarize."
+      "desc": "Talk to the Co-Writer in real time — ask to continue, expand, or summarize."
     },
     "schedules": {
       "name": "Schedules",
       "desc": "Set a cron schedule for autonomous writing — hourly, daily, or weekly."
     },
     "rubric": {
-      "name": "Critic Rubric",
+      "name": "Editor Rubric",
       "desc": "A 5-dimension rubric — lore, character voice, plot, prose, continuity."
     }
   },
   "pipeline": {
     "eyebrow": "Autonomous pipeline",
     "title": "One click. A new chapter.",
-    "subtitle": "The Keeper preps → The Writer drafts → The Editor scores → if it passes, the chapter is saved.",
+    "subtitle": "World-Builder preps → Co-Writer drafts → Editor scores → if it passes, the chapter is saved.",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "The Keeper preps",
+        "name": "World-Builder preps",
         "desc": "Reviews the last chapter, builds writer guidelines, summarizes the story so far."
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "The Writer drafts",
+        "name": "Co-Writer drafts",
         "desc": "Drafts a new chapter from the plan, using tools to search the world and previous chapters."
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "The Editor reviews",
+        "name": "Editor reviews",
         "desc": "Scores 0–10 across 5 dimensions. Must hit 7+ to pass."
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "Loop until it passes",
-        "desc": "If the Editor rejects it, the Writer rewrites from the notes, up to 3 times."
+        "desc": "If the Editor rejects it, the Co-Writer rewrites from the notes, up to 3 times."
       },
       "budget": {
         "title": "Time-bounded",
@@ -121,8 +121,8 @@
     "title": "See it in action",
     "subtitle": "Every page is designed to work with the others — open one and see the whole picture.",
     "plan": "Plan — story arcs and beats",
-    "review": "Review — editor rubric",
-    "chat": "Chat — talk to the Writer",
+    "review": "Review — Editor rubric",
+    "chat": "Chat — talk to the Co-Writer",
     "bookshelf": "Library — your bookshelf"
   },
   "lightbox": {

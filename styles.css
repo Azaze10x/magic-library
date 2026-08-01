@@ -1447,6 +1447,35 @@ section {
   overflow: hidden;
 }
 
+/* Helen presides over the closing card. The gold bloom behind her is the same
+   treatment used in the app's empty state, so the two read as one product. */
+.cta-helen {
+  position: relative;
+  width: 168px;
+  margin: 0 auto 8px;
+}
+
+.cta-helen::before {
+  content: "";
+  position: absolute;
+  inset: 12% 0 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 75, 0.35), transparent 70%);
+  filter: blur(28px);
+}
+
+.cta-helen img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .cta-helen { width: 128px; }
+}
+
 .cta-card::before,
 .cta-card::after {
   content: "✦";

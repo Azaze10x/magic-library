@@ -22,21 +22,21 @@
   },
   "agents": {
     "eyebrow": "Ba trợ lý AI",
-    "title": "Người giữ, Người viết, và Người biên tập",
+    "title": "World-Builder, Co-Writer và Editor",
     "subtitle": "Mỗi người là một chuyên gia. Cùng nhau, họ là một xưởng.",
     "lore": {
-      "role": "Người giữ truyền thuyết",
-      "name": "Người giữ",
+      "role": "Giữ thế giới nhất quán",
+      "name": "World-Builder",
       "desc": "Ghi nhớ mọi chi tiết về thế giới, nhân vật, và quy tắc — duy trì tính liên tục xuyên suốt các chương."
     },
     "writer": {
-      "role": "Tác giả",
-      "name": "Tác giả",
+      "role": "Viết từng chương",
+      "name": "Co-Writer",
       "desc": "Viết từng chương theo kế hoạch truyện của bạn — với phong cách và hướng đi bạn chọn."
     },
     "critic": {
-      "role": "Biên tập viên",
-      "name": "Biên tập viên",
+      "role": "Giữ chuẩn mực",
+      "name": "Editor",
       "desc": "Xem xét từng chương bằng đôi mắt sắc bén — chấm điểm và chỉ ra điều cần tinh chỉnh."
     }
   },
@@ -66,38 +66,38 @@
     },
     "chat": {
       "name": "Trò chuyện",
-      "desc": "Nói chuyện với Tác giả theo thời gian thực — yêu cầu tiếp tục, mở rộng, hoặc tóm tắt."
+      "desc": "Nói chuyện với Co-Writer theo thời gian thực — yêu cầu tiếp tục, mở rộng, hoặc tóm tắt."
     },
     "schedules": {
       "name": "Lịch trình",
       "desc": "Đặt lịch cron để viết tự động — mỗi giờ, mỗi ngày, hoặc mỗi tuần."
     },
     "rubric": {
-      "name": "Thước đo biên tập",
+      "name": "Thước đo của Editor",
       "desc": "Thước đo 5 chiều — truyền thuyết, giọng nhân vật, cốt truyện, văn phong, tính liên tục."
     }
   },
   "pipeline": {
     "eyebrow": "Quy trình tự động",
     "title": "Một cú nhấp. Một chương mới.",
-    "subtitle": "Truyền thuyết chuẩn bị → Tác giả viết → Biên tập chấm → nếu đạt, chương được lưu.",
+    "subtitle": "World-Builder chuẩn bị → Co-Writer viết → Editor chấm → nếu đạt, chương được lưu.",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "Truyền thuyết chuẩn bị",
+        "name": "World-Builder chuẩn bị",
         "desc": "Ôn lại chương trước, soạn hướng dẫn cho tác giả, tóm tắt câu chuyện đến hiện tại."
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "Tác giả viết",
+        "name": "Co-Writer viết",
         "desc": "Soạn chương mới theo kế hoạch, dùng công cụ để tìm trong thế giới và các chương trước."
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "Biên tập đánh giá",
+        "name": "Editor đánh giá",
         "desc": "Chấm 0–10 trên 5 chiều. Phải đạt 7+ mới qua."
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "Lặp đến khi đạt",
-        "desc": "Nếu Biên tập bác, Tác giả viết lại theo góp ý, tối đa 3 lần."
+        "desc": "Nếu Editor bác, Co-Writer viết lại theo góp ý, tối đa 3 lần."
       },
       "budget": {
         "title": "Giới hạn thời gian",
@@ -121,8 +121,8 @@
     "title": "Xem nó hoạt động",
     "subtitle": "Mỗi trang được thiết kế để làm việc cùng nhau — mở một trang, thấy cả bức tranh.",
     "plan": "Plan — vòng cung và beat",
-    "review": "Review — thước đo biên tập",
-    "chat": "Chat — nói chuyện với Tác giả",
+    "review": "Review — thước đo của Editor",
+    "chat": "Chat — nói chuyện với Co-Writer",
     "bookshelf": "Thư viện — kệ sách của bạn"
   },
   "lightbox": {

@@ -22,21 +22,21 @@
   },
   "agents": {
     "eyebrow": "三位 AI 助手",
-    "title": "守护者、抄写员与编辑",
+    "title": "World-Builder、Co-Writer 与 Editor",
     "subtitle": "每一位都是专家,合而为一则是工坊。",
     "lore": {
-      "role": "传承担当",
-      "name": "守护者",
+      "role": "守住世界的一致性",
+      "name": "World-Builder",
       "desc": "记住你世界的每一个细节、角色与规则 — 在每章之间保持一致。"
     },
     "writer": {
-      "role": "抄写员",
-      "name": "作者",
+      "role": "逐章撰写",
+      "name": "Co-Writer",
       "desc": "按你的故事计划逐章撰写 — 采用你选定的风格与方向。"
     },
     "critic": {
-      "role": "编辑担当",
-      "name": "编辑",
+      "role": "把关质量",
+      "name": "Editor",
       "desc": "以锐利的眼光审视每章 — 评分并指出需要打磨之处。"
     }
   },
@@ -66,38 +66,38 @@
     },
     "chat": {
       "name": "对话",
-      "desc": "与作者实时交流 — 请求续写、扩展或总结。"
+      "desc": "与 Co-Writer 实时交流 — 请求续写、扩展或总结。"
     },
     "schedules": {
       "name": "计划任务",
       "desc": "为自主写作设置定时 — 每小时、每天或每周。"
     },
     "rubric": {
-      "name": "校阅量规",
+      "name": "Editor 量规",
       "desc": "五个维度评分 — 世界、角色之声、情节、文笔、连贯性。"
     }
   },
   "pipeline": {
     "eyebrow": "自主流水线",
     "title": "一键,即得新章",
-    "subtitle": "传承担当准备 → 作者撰写 → 编辑校阅 → 通过则保存章节。",
+    "subtitle": "World-Builder 准备 → Co-Writer 撰写 → Editor 校阅 → 通过则保存章节。",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "传承准备",
+        "name": "World-Builder 准备",
         "desc": "回顾上一章,生成写作指南,总结迄今的故事。"
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "作者撰写",
+        "name": "Co-Writer 撰写",
         "desc": "按计划起草新章,使用工具搜索世界与前文。"
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "编辑校阅",
+        "name": "Editor 校阅",
         "desc": "在五维度上 0–10 评分,需达到 7+ 方可通过。"
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "循环直至通过",
-        "desc": "若编辑驳回,作者按反馈重写,最多三次。"
+        "desc": "若 Editor 驳回,Co-Writer 按反馈重写,最多三次。"
       },
       "budget": {
         "title": "限时执行",
@@ -121,8 +121,8 @@
     "title": "看它如何运作",
     "subtitle": "每一页都与其它页面协同 — 打开一处,全貌在握。",
     "plan": "计划 — 故事弧与节拍",
-    "review": "校阅 — 编辑量规",
-    "chat": "对话 — 与作者交谈",
+    "review": "校阅 — Editor 量规",
+    "chat": "对话 — 与 Co-Writer 交谈",
     "bookshelf": "书库 — 您的书架"
   },
   "lightbox": {

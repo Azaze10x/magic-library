@@ -22,21 +22,21 @@
   },
   "agents": {
     "eyebrow": "Tiga agen AI",
-    "title": "Sang Penjaga, Penulis, dan Penyunting",
+    "title": "World-Builder, Co-Writer, dan Editor",
     "subtitle": "Masing-masing adalah ahli. Bersama, mereka adalah sanggar.",
     "lore": {
-      "role": "Penjaga Lore",
-      "name": "Sang Penjaga",
+      "role": "Menjaga dunia tetap runut",
+      "name": "World-Builder",
       "desc": "Mengingat setiap detail dunia, karakter, dan aturan Anda — menjaga konsistensi antar bab."
     },
     "writer": {
-      "role": "Penulis",
-      "name": "Penulis",
+      "role": "Menulis bab demi bab",
+      "name": "Co-Writer",
       "desc": "Menyusun bab demi bab dari rencana cerita Anda — dengan gaya dan arah yang Anda pilih."
     },
     "critic": {
-      "role": "Penyunting",
-      "name": "Penyunting",
+      "role": "Menjaga standar",
+      "name": "Editor",
       "desc": "Menelaah setiap bab dengan mata tajam — memberi skor dan menunjuk yang perlu diperbaiki."
     }
   },
@@ -66,38 +66,38 @@
     },
     "chat": {
       "name": "Obrolan",
-      "desc": "Bicara dengan Penulis secara langsung — minta lanjutkan, perluas, atau rangkum."
+      "desc": "Bicara dengan Co-Writer secara langsung — minta lanjutkan, perluas, atau rangkum."
     },
     "schedules": {
       "name": "Jadwal",
       "desc": "Atur cron untuk menulis otomatis — tiap jam, tiap hari, atau tiap minggu."
     },
     "rubric": {
-      "name": "Rubrik Penyunting",
+      "name": "Rubrik Editor",
       "desc": "Rubrik 5-dimensi — lore, suara karakter, alur, prosa, kontinuitas."
     }
   },
   "pipeline": {
     "eyebrow": "Saluran otomatis",
     "title": "Satu klik. Satu bab baru.",
-    "subtitle": "Penjaga Dunia bersiap → Penulis menulis → Penyunting menilai → jika lulus, bab tersimpan.",
+    "subtitle": "World-Builder bersiap → Co-Writer menulis → Editor menilai → jika lulus, bab tersimpan.",
     "stages": {
       "prep": {
         "num": "01",
         "glyph": "🧙",
-        "name": "Penjaga Dunia bersiap",
+        "name": "World-Builder bersiap",
         "desc": "Meninjau bab terakhir, membangun pedoman penulis, merangkum cerita sejauh ini."
       },
       "write": {
         "num": "02",
         "glyph": "✍️",
-        "name": "Penulis menulis",
+        "name": "Co-Writer menulis",
         "desc": "Menyusun bab baru dari rencana, memakai alat untuk menjelajah dunia dan bab-bab sebelumnya."
       },
       "review": {
         "num": "03",
         "glyph": "📖",
-        "name": "Penyunting menilai",
+        "name": "Editor menilai",
         "desc": "Skor 0–10 di lima dimensi. Harus mencapai 7+ untuk lulus."
       }
     },
@@ -108,7 +108,7 @@
       },
       "loop": {
         "title": "Mengulang sampai lulus",
-        "desc": "Jika Penyunting menolak, Penulis menulis ulang berdasarkan masukan, hingga 3 kali."
+        "desc": "Jika Editor menolak, Co-Writer menulis ulang berdasarkan masukan, hingga 3 kali."
       },
       "budget": {
         "title": "Batas waktu",
@@ -121,8 +121,8 @@
     "title": "Lihat dalam aksi",
     "subtitle": "Setiap halaman dirancang untuk bekerja bersama — buka satu, lihat keseluruhan.",
     "plan": "Plan — busur cerita dan beat",
-    "review": "Review — rubrik penyunting",
-    "chat": "Chat — bicara dengan Penulis",
+    "review": "Review — rubrik Editor",
+    "chat": "Chat — bicara dengan Co-Writer",
     "bookshelf": "Perpustakaan — rak buku Anda"
   },
   "lightbox": {
