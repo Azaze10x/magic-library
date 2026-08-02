@@ -145,17 +145,17 @@
     "plans": {
       "creator": {
         "name": "Creator",
-        "credits": "1,000 เครดิต",
+        "credits": "แพ็กเกจเริ่มต้น",
         "price": "฿350 / เดือน"
       },
       "pro": {
         "name": "Pro",
-        "credits": "3,000 เครดิต",
+        "credits": "5× ของแพ็กเกจเริ่มต้น",
         "price": "฿1,050 / เดือน"
       },
       "studio": {
         "name": "Studio",
-        "credits": "10,000 เครดิต",
+        "credits": "20× ของแพ็กเกจเริ่มต้น",
         "price": "฿3,500 / เดือน"
       }
     },

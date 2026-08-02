@@ -145,17 +145,17 @@
     "plans": {
       "creator": {
         "name": "Creator",
-        "credits": "1,000 credits",
+        "credits": "The entry plan",
         "price": "฿350 / mo"
       },
       "pro": {
         "name": "Pro",
-        "credits": "3,000 credits",
+        "credits": "5× the entry plan",
         "price": "฿1,050 / mo"
       },
       "studio": {
         "name": "Studio",
-        "credits": "10,000 credits",
+        "credits": "20× the entry plan",
         "price": "฿3,500 / mo"
       }
     },
