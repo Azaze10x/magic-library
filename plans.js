@@ -1,29 +1,39 @@
-/* Magic Library landing — keep the Nexus plan ladder true to the portal
+/* Magic Library landing — keep the Nexus plan cards true to the portal
  *
- * The plan cards quote each tier as a multiple of the entry plan ("5× the entry
- * plan") rather than a raw credit allowance, matching the app's plan cards. The
- * multiple is the one number on the card, so it has to be right: it was
- * hand-written here once and drifted, advertising 3,000 and 10,000 credits while
- * the portal sold 5,000 and 20,000.
+ * The cards quote each tier as a multiple of the entry plan ("5× the entry
+ * plan") and a monthly price, matching the app's plan cards. Both were
+ * hand-written here once and the allowances drifted: the page advertised 3,000
+ * and 10,000 credits while the portal sold 5,000 and 20,000. Prices matched, so
+ * nothing looked broken — the page simply promised less than a buyer received,
+ * in six languages, for as long as the numbers sat here uncorrected.
  *
  * The portal publishes its catalogue at /api/public/plans, CORS-open and without
- * auth, exactly so it can be the single source of truth; the desktop app reads it
- * through fetchNexusPlans (src/lib/nexus/config.ts). This does the same, and
- * derives the multiple the way planMultiplier does, so raising the entry
- * allowance updates every card instead of silently making them lies.
+ * auth, described in its own source as existing so ecosystem apps fetch the
+ * numbers instead of keeping a copy. The desktop app reads it through
+ * fetchNexusPlans (src/lib/nexus/config.ts); this reads the same list.
  *
- * The translated strings in locales/*.json carry correct multiples of their own
- * and stand when the portal is unreachable.
+ * Why the multiple rather than the credit count: the portal stores each plan's
+ * grant as MONEY (PLAN_ALLOWANCE_MICROUSD) and renders credits from it at the
+ * current credit value. "5,000 credits" is therefore only true at today's
+ * valuation — halve what a credit is worth and the same grant renders as 10,000
+ * — while "5×" is a ratio between grants and holds at any valuation.
+ *
+ * The price is synced for a blunter reason: the portal is the till. A page that
+ * advertises one figure while checkout charges another is not a stale number,
+ * it is a broken promise.
+ *
+ * The translated strings carry correct values of their own and stand when the
+ * portal is unreachable.
  */
 
 const PLANS_URL = "https://nexus.shamantech.co/api/public/plans";
 const PLAN_IDS = ["creator", "pro", "studio"];
 
-let liveMultiples = null;
+let livePlans = null;
 
 /** Money-adjacent display data: drop anything malformed rather than coerce it,
  *  and return null on an unusable payload so the translated text stays. */
-function parseMultiples(raw) {
+function parse(raw) {
   const arr = raw && raw.plans;
   if (!Array.isArray(arr)) return null;
 
@@ -31,9 +41,7 @@ function parseMultiples(raw) {
     (p) =>
       p &&
       PLAN_IDS.includes(p.id) &&
-      typeof p.credits === "number" &&
-      Number.isFinite(p.credits) &&
-      p.credits > 0
+      [p.credits, p.thb].every((n) => typeof n === "number" && Number.isFinite(n) && n > 0)
   );
   if (!plans.length) return null;
 
@@ -42,22 +50,41 @@ function parseMultiples(raw) {
   for (const plan of plans) {
     // Only exact multiples get quoted. A legacy or prorated allowance is not
     // "3.7× the entry plan", and rounding it would state a tier nobody sells.
-    if (plan.credits % base !== 0) continue;
-    out[plan.id] = plan.credits / base;
+    const multiple = plan.credits % base === 0 ? plan.credits / base : null;
+    out[plan.id] = { multiple, thb: plan.thb };
   }
   return out;
 }
 
-/** Swap the multiple inside the translated label, whichever side of the × the
- *  language puts it on: "5× the entry plan" and "入门套餐的 5×" both work. */
-function render() {
-  if (!liveMultiples) return;
+/** Replace a number inside a translated string without disturbing the rest of
+ *  it — each locale has its own grouping and its own word order. */
+function swapNumber(text, pattern, value, locale) {
+  const formatted = new Intl.NumberFormat(locale || "en").format(value);
+  return text.replace(pattern, (match) => match.replace(/[\d.,]+/, formatted));
+}
+
+function render(event) {
+  if (!livePlans) return;
+  // The event carries the locale it just applied; the document attribute is the
+  // fallback for the initial load, when nothing dispatched.
+  const locale = event?.detail?.locale || document.documentElement.lang || "en";
+
   for (const id of PLAN_IDS) {
-    const multiple = liveMultiples[id];
-    const el = document.querySelector(`[data-i18n="nexus.plans.${id}.credits"]`);
-    // The entry plan itself carries no multiple — nothing to keep in sync.
-    if (!el || !multiple || multiple === 1) continue;
-    el.textContent = el.textContent.replace(/\d+(?=\s*×)/, String(multiple));
+    const plan = livePlans[id];
+    if (!plan) continue;
+
+    // The entry plan carries no multiple — there is nothing to keep in sync.
+    if (plan.multiple && plan.multiple !== 1) {
+      const el = document.querySelector(`[data-i18n="nexus.plans.${id}.credits"]`);
+      // Matched against the × so it works whichever side the language puts the
+      // figure on: "5× the entry plan" and "入门套餐的 5×".
+      if (el) el.textContent = el.textContent.replace(/\d+(?=\s*×)/, String(plan.multiple));
+    }
+
+    const priceEl = document.querySelector(`[data-i18n="nexus.plans.${id}.price"]`);
+    // Anchored on ฿ so the locale's own suffix — "/ mo", "/ bln", "/ เดือน" —
+    // survives untouched.
+    if (priceEl) priceEl.textContent = swapNumber(priceEl.textContent, /฿\s*[\d.,]+/, plan.thb, locale);
   }
 }
 
@@ -65,10 +92,10 @@ async function load() {
   try {
     const res = await fetch(PLANS_URL, { cache: "no-store" });
     if (!res.ok) return;
-    liveMultiples = parseMultiples(await res.json());
+    livePlans = parse(await res.json());
     render();
   } catch {
-    // Offline, blocked, or the portal is down — the translated ladder stands.
+    // Offline, blocked, or the portal is down — the translated figures stand.
   }
 }
 

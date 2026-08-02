@@ -170,10 +170,14 @@ async function setLocale(locale) {
   window.__mlDict = currentDict;
   applyTranslations(currentDict);
   applyMeta(currentDict);
+  document.documentElement.lang = locale;
   // applyTranslations overwrites every [data-i18n] node, so anything showing
   // live data has to re-assert itself after each switch. plans.js listens.
+  // Dispatched AFTER documentElement.lang is updated: a listener formatting
+  // numbers reads the language off the document, and firing first handed it the
+  // outgoing locale — Indonesian prices came back grouped as 1,260 instead of
+  // 1.260.
   document.dispatchEvent(new CustomEvent("ml:locale", { detail: { locale, dict: currentDict } }));
-  document.documentElement.lang = locale;
   loadLocaleFont(locale);
   /* Update switcher label + active state */
   const label = document.getElementById("lang-current");
