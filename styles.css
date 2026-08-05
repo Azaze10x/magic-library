@@ -542,24 +542,103 @@ button {
   background: rgba(159, 122, 234, 0.08);
 }
 
-.coming-soon-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #5A2320;
-  background: rgba(139, 46, 42, 0.14);
-  border: 1px solid rgba(139, 46, 42, 0.35);
-  border-radius: 100px;
-  margin-left: 8px;
+/* ---------- Per-platform download buttons ---------- */
+
+/* macOS and Windows each get their own button. Both are always visible — the
+   one matching the visitor's OS is promoted to gold (.btn-platform-lead) by
+   download.js, the other stays as a quieter outline. */
+.download-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.coming-soon-badge.available {
-  color: #2C4226;
-  background: rgba(62, 92, 54, 0.15);
-  border-color: rgba(62, 92, 54, 0.4);
+.download-group-center {
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--moonlight);
+  background: rgba(22, 32, 58, 0.7);
+  border: 1px solid rgba(201, 162, 75, 0.35);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.2s, background 0.2s;
+}
+
+.btn-platform:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  background: rgba(22, 32, 58, 0.95);
+}
+
+.btn-platform:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* The visitor's own platform — same gold as the primary CTA elsewhere. */
+.btn-platform-lead {
+  color: var(--night-deep);
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 55%, #B68A33 100%);
+  border-color: transparent;
+  box-shadow: var(--shadow-gold), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-platform-lead:hover {
+  background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 55%, #B68A33 100%);
+  border-color: transparent;
+  box-shadow: var(--shadow-gold), var(--shadow-glow), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+/* No installer for this platform yet: still readable, clearly not clickable. */
+.btn-platform[aria-disabled="true"] {
+  cursor: default;
+  filter: saturate(0.5) brightness(0.85);
+}
+
+.btn-platform[aria-disabled="true"]:hover {
+  transform: none;
+}
+
+.btn-platform-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.25;
+}
+
+.btn-platform-label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* "Coming soon" until the release API answers, then "v0.1.1 · 92 MB". */
+.btn-platform-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+/* A version string is not a label — leave "v0.1.1" its lowercase v. */
+.btn-platform-meta.available {
+  text-transform: none;
+  opacity: 0.8;
+}
+
+/* Brand marks (Apple, Windows) are solid shapes, unlike the stroked icon set. */
+.icon-solid {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* hero screenshot in a macOS window frame */
@@ -1630,7 +1709,8 @@ section {
     margin-left: auto;
     margin-right: auto;
   }
-  .hero-cta {
+  .hero-cta,
+  .download-group {
     justify-content: center;
   }
   .hero-shot {
@@ -1686,6 +1766,14 @@ section {
   .cta-card {
     padding: 40px 24px;
   }
+  /* Side by side no longer fits — one full-width button per platform. */
+  .download-group {
+    width: 100%;
+  }
+  .btn-platform {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1713,25 +1801,6 @@ section {
 
 /* ---------- Cross-platform download affordances ---------- */
 
-/* Secondary link to the installer for the platform the visitor is NOT on.
-   Deliberately quiet: the primary CTA already matches their OS. */
-.download-alt {
-  display: inline-block;
-  margin-top: 14px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.6px;
-  color: rgba(243, 233, 210, 0.55);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color 0.2s ease;
-}
-
-.download-alt:hover,
-.download-alt:focus-visible {
-  color: rgba(243, 233, 210, 0.85);
-}
-
 /* SmartScreen explainer, shown to Windows visitors only. */
 .download-note {
   max-width: 52ch;
@@ -1742,7 +1811,6 @@ section {
   text-align: center;
 }
 
-.download-alt[hidden],
 .download-note[hidden] {
   display: none;
 }

@@ -180,8 +180,6 @@
   "download": {
     "forMac": "Tải cho macOS",
     "forWindows": "Tải cho Windows",
-    "altMac": "Cũng có bản cho macOS",
-    "altWindows": "Cũng có bản cho Windows",
     "winSmartScreen": "Lần đầu chạy trình cài đặt, Windows sẽ hiện “Windows protected your PC”. Hãy chọn More info → Run anyway. Thông báo này xuất hiện vì trình cài đặt chưa được ký số, không phải vì tệp tải về có vấn đề."
   }
 }

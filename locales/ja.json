@@ -180,8 +180,6 @@
   "download": {
     "forMac": "macOS 版をダウンロード",
     "forWindows": "Windows 版をダウンロード",
-    "altMac": "macOS 版もあります",
-    "altWindows": "Windows 版もあります",
     "winSmartScreen": "インストーラーを初めて実行すると、Windows に「Windows によって PC が保護されました」と表示されます。「詳細情報」→「実行」を選んでください。これはインストーラーがまだコード署名されていないためで、ファイルに問題があるわけではありません。"
   }
 }

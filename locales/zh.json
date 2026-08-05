@@ -180,8 +180,6 @@
   "download": {
     "forMac": "下载 macOS 版",
     "forWindows": "下载 Windows 版",
-    "altMac": "也提供 macOS 版",
-    "altWindows": "也提供 Windows 版",
     "winSmartScreen": "首次运行安装程序时，Windows 会显示“Windows 已保护你的电脑”。请点击“更多信息”→“仍要运行”。这是因为安装程序尚未进行代码签名，并不表示下载的文件有问题。"
   }
 }

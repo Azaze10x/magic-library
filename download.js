@@ -3,8 +3,8 @@
  * GitHub Releases is the single download source. This module:
  * 1. Fetch latest release from GitHub Releases API
  * 2. Find the .dmg (macOS) and -setup.exe (Windows) assets
- * 3. Wire the primary CTA to whichever matches the visitor's OS, and offer the
- *    other one as a secondary link
+ * 3. Wire the macOS and Windows buttons independently, promoting whichever one
+ *    matches the visitor's OS to the gold treatment
  *
  * The existing unsigned v0.1.0 remains hidden. Downloads turn on automatically
  * when the first public release at or above MIN_PUBLIC_VERSION is published.
@@ -86,103 +86,74 @@ function formatBytes(bytes) {
   return mb < 1 ? `${(bytes / 1024).toFixed(0)} KB` : `${mb.toFixed(0)} MB`;
 }
 
-/** Text for a key from the active dictionary, falling back to the markup. */
-function translate(key, fallback) {
-  const dict = window.__mlDict;
-  if (!dict) return fallback;
-  const value = key.split(".").reduce((acc, part) => (acc ? acc[part] : undefined), dict);
-  return typeof value === "string" ? value : fallback;
+/* Unknown platform is treated as macOS: it is the signed, notarized build, so it
+   is the safer thing to lead with for someone we cannot identify. The markup
+   already leads with macOS, so this only has to move the emphasis for Windows. */
+function leadKind() {
+  return detectPlatform() === "win" ? "win" : "mac";
+}
+
+function buttonsFor(kind) {
+  return document.querySelectorAll(`[data-download="${kind}"]`);
+}
+
+/* Move the gold treatment onto the visitor's own platform. Runs before the
+   release API answers so the right button is emphasised from first paint. */
+function emphasizePlatform(kind) {
+  for (const btn of buttonsFor("mac")) btn.classList.toggle("btn-platform-lead", kind === "mac");
+  for (const btn of buttonsFor("win")) btn.classList.toggle("btn-platform-lead", kind === "win");
+
+  // Only alongside a promoted Windows build — someone heading for the .dmg never
+  // meets SmartScreen, and an unexplained security warning is just noise to them.
+  for (const note of document.querySelectorAll("[data-win-note]")) {
+    note.hidden = kind !== "win";
+  }
+}
+
+/* Wire one platform's buttons. A release can legitimately carry only one
+   installer; the platform without an asset keeps its "Coming soon" state rather
+   than pointing at a file that does not exist. */
+function wirePlatform(kind, asset, version) {
+  if (!asset) {
+    console.log(`[download] No ${kind} asset in this release — that button stays disabled`);
+    return;
+  }
+  for (const btn of buttonsFor(kind)) {
+    btn.setAttribute("href", asset.url);
+    btn.setAttribute("download", asset.name);
+    btn.setAttribute("rel", "noopener");
+    btn.removeAttribute("aria-disabled");
+  }
+  for (const meta of document.querySelectorAll(`[data-download-meta="${kind}"]`)) {
+    meta.textContent = `v${version} · ${formatBytes(asset.size)}`;
+    meta.classList.add("available");
+    // Drop the key so a locale switch does not reset this back to "Coming soon".
+    meta.removeAttribute("data-i18n");
+  }
+  console.log(`[download] ${kind}: ${asset.name} (${formatBytes(asset.size)})`);
 }
 
 function enableDownload(release) {
-  // Unknown platform is treated as macOS: it is the signed, notarized build, so
-  // it is the safer thing to hand someone we cannot identify.
-  const primaryKind = detectPlatform() === "win" ? "win" : "mac";
-  const secondaryKind = primaryKind === "win" ? "mac" : "win";
-  const primary = release[primaryKind];
-  const secondary = release[secondaryKind];
+  wirePlatform("mac", release.mac, release.version);
+  wirePlatform("win", release.win, release.version);
 
-  const buttons = [
-    document.getElementById("download-btn"),
-    document.getElementById("download-btn-2"),
-  ].filter(Boolean);
-  if (buttons.length === 0) return;
-
-  // No build for this visitor's OS — a release can legitimately carry only one
-  // platform. Leave the CTA in its "Coming soon" state rather than handing a
-  // macOS user a .exe, but still surface the other build so the page is not a
-  // dead end for someone downloading on behalf of another machine.
-  if (!primary) {
-    for (const alt of document.querySelectorAll("[data-download-alt]")) {
-      if (!secondary) break;
-      const key = secondaryKind === "win" ? "download.altWindows" : "download.altMac";
-      alt.textContent = translate(key, secondaryKind === "win" ? "Also for Windows" : "Also for macOS");
-      alt.setAttribute("data-i18n", key);
-      alt.setAttribute("href", secondary.url);
-      alt.setAttribute("download", secondary.name);
-      alt.setAttribute("rel", "noopener");
-      alt.hidden = false;
-    }
-    console.log(`[download] No ${primaryKind} asset in this release — CTA stays disabled`);
-    return;
-  }
-
-  for (const btn of buttons) {
-    btn.setAttribute("href", primary.url);
-    btn.setAttribute("download", primary.name);
-    btn.setAttribute("rel", "noopener");
-    btn.removeAttribute("aria-disabled");
-    btn.removeAttribute("onclick");
-    btn.onclick = null;
-    const label = btn.querySelector("[data-i18n]");
-    if (label) {
-      const key = primaryKind === "win" ? "download.forWindows" : "download.forMac";
-      label.textContent = translate(key, primaryKind === "win" ? "Download for Windows" : "Download for macOS");
-      label.removeAttribute("data-i18n"); // stop applyTranslations resetting it on locale change
-      label.setAttribute("data-i18n", key);
-    }
-  }
-
-  const badge = document.getElementById("download-badge");
-  if (badge) {
-    badge.textContent = `v${release.version} · ${formatBytes(primary.size)}`;
-    badge.classList.add("available");
-    badge.removeAttribute("data-i18n");
-  }
-
-  for (const alt of document.querySelectorAll("[data-download-alt]")) {
-    if (!secondary) {
-      alt.hidden = true;
-      continue;
-    }
-    const key = secondaryKind === "win" ? "download.altWindows" : "download.altMac";
-    alt.textContent = translate(key, secondaryKind === "win" ? "Also for Windows" : "Also for macOS");
-    alt.setAttribute("data-i18n", key);
-    alt.setAttribute("href", secondary.url);
-    alt.setAttribute("download", secondary.name);
-    alt.setAttribute("rel", "noopener");
-    alt.hidden = false;
-  }
-
-  // Shown only to Windows visitors — macOS users never see SmartScreen, and an
-  // unexplained security warning on someone else's page is just noise.
-  for (const note of document.querySelectorAll("[data-win-note]")) {
-    note.hidden = primaryKind !== "win";
-  }
-
-  console.log(`[download] Primary ${primaryKind}: ${primary.name} (${formatBytes(primary.size)})`);
+  // Never leave the gold on a button that cannot be clicked: if this release has
+  // no build for the visitor's OS, lead with the one it does have.
+  const preferred = leadKind();
+  emphasizePlatform(release[preferred] ? preferred : preferred === "win" ? "mac" : "win");
 }
 
 (async function init() {
+  emphasizePlatform(leadKind());
   if (!DOWNLOAD_ENABLED) {
     console.log("[download] Disabled by DOWNLOAD_ENABLED flag — buttons stay Coming soon");
     return;
   }
-  /* Try to fetch — if no release yet, button stays disabled with "Coming soon" badge */
+  /* Try to fetch — if no release yet, buttons stay disabled with "Coming soon" */
   const release = await fetchLatestRelease();
   if (release) {
     enableDownload(release);
   } else {
-    console.log("[download] No release available — button stays disabled");
+    console.log("[download] No release available — buttons stay disabled");
   }
 })();

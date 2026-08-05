@@ -180,8 +180,6 @@
   "download": {
     "forMac": "Download for macOS",
     "forWindows": "Download for Windows",
-    "altMac": "Also available for macOS",
-    "altWindows": "Also available for Windows",
     "winSmartScreen": "Windows will show “Windows protected your PC” the first time you run the installer. Choose More info → Run anyway. This appears because the installer is not yet code-signed, not because anything is wrong with the download."
   }
 }

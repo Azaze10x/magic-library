@@ -180,8 +180,6 @@
   "download": {
     "forMac": "ดาวน์โหลดสำหรับ macOS",
     "forWindows": "ดาวน์โหลดสำหรับ Windows",
-    "altMac": "มีเวอร์ชัน macOS ด้วย",
-    "altWindows": "มีเวอร์ชัน Windows ด้วย",
     "winSmartScreen": "ครั้งแรกที่เปิดตัวติดตั้ง Windows จะขึ้นข้อความ “Windows protected your PC” ให้กด More info แล้วเลือก Run anyway ข้อความนี้ขึ้นเพราะตัวติดตั้งยังไม่ได้เซ็นใบรับรอง ไม่ได้แปลว่าไฟล์มีปัญหา"
   }
 }

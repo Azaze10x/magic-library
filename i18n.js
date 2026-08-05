@@ -165,9 +165,6 @@ async function setLocale(locale) {
   currentLocale = locale;
   localStorage.setItem(STORAGE_KEY, locale);
   currentDict = await loadLocale(locale);
-  // download.js labels its buttons from the active dictionary after the release
-  // API answers, which can land before or after a locale switch.
-  window.__mlDict = currentDict;
   applyTranslations(currentDict);
   applyMeta(currentDict);
   document.documentElement.lang = locale;
