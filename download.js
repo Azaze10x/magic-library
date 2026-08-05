@@ -1,13 +1,22 @@
 /* Magic Library landing — Download button wiring
  *
  * GitHub Releases is the single download source. This module:
- * 1. Fetch latest release from GitHub Releases API
- * 2. Find the .dmg (macOS) and -setup.exe (Windows) assets
- * 3. Wire the macOS and Windows buttons independently, promoting whichever one
- *    matches the visitor's OS to the gold treatment
+ * 1. Wire the buttons to SHIPPED_RELEASE immediately, so a published build is
+ *    downloadable on first paint with no network call of our own
+ * 2. Ask the GitHub Releases API whether something newer exists, and upgrade
+ * 3. Promote whichever platform matches the visitor's OS to the gold treatment
  *
- * The existing unsigned v0.1.0 remains hidden. Downloads turn on automatically
- * when the first public release at or above MIN_PUBLIC_VERSION is published.
+ * The API is an upgrade, never a dependency. It used to be the only source, and
+ * the failure mode was unacceptable: unauthenticated GitHub allows 60 requests
+ * per hour per IP, and every page load spent one. Once an office, a campus or a
+ * CGNAT range burned through them, api.github.com answered 403 and this page
+ * quietly told every visitor the app was still "Coming soon" — with the buttons
+ * dead. A shipped build must not stop existing because a rate limit was hit,
+ * GitHub had an outage, or a firewall dislikes api.github.com.
+ *
+ * SHIPPED_RELEASE therefore has to be bumped when a release is published. If it
+ * goes stale the page offers an older build rather than no build, which is the
+ * right way round to be wrong.
  *
  * The Windows installer is not code-signed, so SmartScreen shows "Windows
  * protected your PC" on first run. Telling people that up front — with the
@@ -17,6 +26,18 @@
 
 const DOWNLOAD_ENABLED = true;
 const MIN_PUBLIC_VERSION = [0, 1, 1];
+
+/* The newest release known at publish time. `null` means that platform has no
+   installer yet and its button stays "Coming soon". */
+const SHIPPED_RELEASE = {
+  version: "0.1.12",
+  mac: null,
+  win: {
+    url: "https://github.com/Azaze10x/magic-library/releases/download/v0.1.12/Magic-Library-0.1.12-x64-setup.exe",
+    name: "Magic-Library-0.1.12-x64-setup.exe",
+    size: 149519043,
+  },
+};
 
 const RELEASE_API = "https://api.github.com/repos/Azaze10x/magic-library/releases/latest";
 const DMG_PATTERN = /\.dmg$/i;
@@ -59,7 +80,8 @@ async function fetchLatestRelease() {
       headers: { Accept: "application/vnd.github+json" },
     });
     if (!res.ok) {
-      console.warn(`[download] GitHub API returned ${res.status} — installers may not be published yet`);
+      // 403 here is almost always the 60-per-hour unauthenticated rate limit.
+      console.warn(`[download] GitHub API returned ${res.status} — keeping the shipped build`);
       return null;
     }
     const data = await res.json();
@@ -87,19 +109,30 @@ function formatBytes(bytes) {
 }
 
 /* Unknown platform is treated as macOS: it is the signed, notarized build, so it
-   is the safer thing to lead with for someone we cannot identify. The markup
-   already leads with macOS, so this only has to move the emphasis for Windows. */
-function leadKind() {
+   is the safer thing to lead with for someone we cannot identify. */
+function ownKind() {
   return detectPlatform() === "win" ? "win" : "mac";
+}
+
+function otherKind(kind) {
+  return kind === "win" ? "mac" : "win";
 }
 
 function buttonsFor(kind) {
   return document.querySelectorAll(`[data-download="${kind}"]`);
 }
 
-/* Move the gold treatment onto the visitor's own platform. Runs before the
-   release API answers so the right button is emphasised from first paint. */
-function emphasizePlatform(kind) {
+function isWired(kind) {
+  const btn = buttonsFor(kind)[0];
+  return Boolean(btn) && !btn.hasAttribute("aria-disabled");
+}
+
+/* Move the gold onto the visitor's own platform — unless nothing has shipped for
+   it, in which case the emphasis goes to a build they can actually download. */
+function emphasizePlatform() {
+  const own = ownKind();
+  const kind = isWired(own) || !isWired(otherKind(own)) ? own : otherKind(own);
+
   for (const btn of buttonsFor("mac")) btn.classList.toggle("btn-platform-lead", kind === "mac");
   for (const btn of buttonsFor("win")) btn.classList.toggle("btn-platform-lead", kind === "win");
 
@@ -114,10 +147,7 @@ function emphasizePlatform(kind) {
    installer; the platform without an asset keeps its "Coming soon" state rather
    than pointing at a file that does not exist. */
 function wirePlatform(kind, asset, version) {
-  if (!asset) {
-    console.log(`[download] No ${kind} asset in this release — that button stays disabled`);
-    return;
-  }
+  if (!asset) return;
   for (const btn of buttonsFor(kind)) {
     btn.setAttribute("href", asset.url);
     btn.setAttribute("download", asset.name);
@@ -133,27 +163,41 @@ function wirePlatform(kind, asset, version) {
   console.log(`[download] ${kind}: ${asset.name} (${formatBytes(asset.size)})`);
 }
 
-function enableDownload(release) {
+function applyRelease(release) {
   wirePlatform("mac", release.mac, release.version);
   wirePlatform("win", release.win, release.version);
+  emphasizePlatform();
+}
 
-  // Never leave the gold on a button that cannot be clicked: if this release has
-  // no build for the visitor's OS, lead with the one it does have.
-  const preferred = leadKind();
-  emphasizePlatform(release[preferred] ? preferred : preferred === "win" ? "mac" : "win");
+/** Strictly newer than the build baked in at publish time? */
+function supersedesShipped(version) {
+  const next = parseVersion(version);
+  const current = parseVersion(SHIPPED_RELEASE.version);
+  if (!next || !current) return false;
+  for (let index = 0; index < next.length; index += 1) {
+    if (next[index] > current[index]) return true;
+    if (next[index] < current[index]) return false;
+  }
+  return false;
 }
 
 (async function init() {
-  emphasizePlatform(leadKind());
   if (!DOWNLOAD_ENABLED) {
+    emphasizePlatform();
     console.log("[download] Disabled by DOWNLOAD_ENABLED flag — buttons stay Coming soon");
     return;
   }
-  /* Try to fetch — if no release yet, buttons stay disabled with "Coming soon" */
-  const release = await fetchLatestRelease();
-  if (release) {
-    enableDownload(release);
-  } else {
-    console.log("[download] No release available — buttons stay disabled");
+
+  applyRelease(SHIPPED_RELEASE);
+
+  /* From here on it is only ever an upgrade: a failed or rate-limited API call
+     leaves the shipped build in place instead of taking the buttons away. */
+  const latest = await fetchLatestRelease();
+  if (!latest) return;
+  if (!supersedesShipped(latest.version)) {
+    console.log(`[download] API has v${latest.version}; shipped v${SHIPPED_RELEASE.version} already covers it`);
+    return;
   }
+  console.log(`[download] Upgrading to v${latest.version} from the API`);
+  applyRelease(latest);
 })();
